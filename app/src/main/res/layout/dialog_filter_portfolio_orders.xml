@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:padding="16dp">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort &amp; Filter"
+            app:txtFor="big"
+            app:txtStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sort"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_sort" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_filter_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_layout_border_10_no_padding"
+            android:drawableEnd="@drawable/ic_bot_row"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:text="All stocks"
+            android:layout_marginTop="24dp"
+            app:txtFor="body"
+            app:txtColor="black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sort" />
+
+        <View
+            android:id="@+id/view_stock_dropdown_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_filter_stock" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Type"
+            app:txtStyle="bold"
+            app:txtFor="title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_filter_stock" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_weight="2.5"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_type">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_type_all"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="All"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_type_buy"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buy"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_type_sell"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sell"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Status"
+            app:txtStyle="bold"
+            app:txtFor="title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipGroup_type" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_weight="2.5"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status_all"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="All"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status_open"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status_amend"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amend"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status_withdrawn"
+                style="@style/Widget.App.Chip.White.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Withdrawn"
+                android:textSize="14dp"
+                app:chipMinTouchTargetSize="24dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tv_status, chipGroup_status"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipGroup_status"
+            android:layout_marginTop="50dp"
+            android:weightSum="2">
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:backgroundTint="@null"
+                android:layout_marginRight="8dp"
+                android:text="Reset"
+                app:btnStyle="outline"
+                android:textColor="#0C2E3D"/>
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_apply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:backgroundTint="@null"
+                android:layout_marginLeft="8dp"
+                android:text="Apply"
+                app:btnStyle="primary"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

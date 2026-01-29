@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+    <entry>
+        <key>android_config</key>
+        <value>{
+            "version_name" : "0.0.24",
+            "version_code" : 1
+            }
+        </value>
+    </entry>
+</defaults>

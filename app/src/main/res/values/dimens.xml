@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- height -->
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="collapse_toolbar_linear">84dp</dimen>
+    <dimen name="toolbar_height">35dp</dimen>
+
+    <dimen name="button_height">33dp</dimen>
+    <dimen name="button_height_small">17dp</dimen>
+
+    <dimen name="header_height">200dp</dimen>
+    <dimen name="ads_height">200dp</dimen>
+
+    <!-- padding -->
+    <dimen name="extra_small_padding">2dp</dimen>
+    <dimen name="small_padding">3dp</dimen>
+    <dimen name="medium_padding">6dp</dimen>
+    <dimen name="reg_padding">8dp</dimen>
+    <dimen name="large_padding">10dp</dimen>
+    <dimen name="standard_padding">14dp</dimen>
+    <dimen name="big_large_padding">18dp</dimen>
+    <dimen name="extra_large_padding">22dp</dimen>
+    <dimen name="super_large_padding">30dp</dimen>
+
+    <dimen name="activity_padding">14dp</dimen>
+    <dimen name="edit_text_padding">14dp</dimen>
+
+    <!-- margin -->
+    <dimen name="activity_horizontal_margin">14dp</dimen>
+    <dimen name="activity_vertical_margin">14dp</dimen>
+    <dimen name="activity_small_horizontal_margin">10dp</dimen>
+    <dimen name="activity_small_vertical_margin">10dp</dimen>
+
+    <!--extra line spacing-->
+    <dimen name="extra_small_spacing">1dp</dimen>
+    <dimen name="small_spacing">3dp</dimen>
+    <dimen name="medium_spacing">6dp</dimen>
+    <dimen name="large_spacing">10dp</dimen>
+    <dimen name="extra_large_spacing">22dp</dimen>
+
+    <!-- elevation -->
+    <dimen name="button_rest_elevation">1dp</dimen>
+    <dimen name="card_rest_elevation">1dp</dimen>
+    <dimen name="app_bar_elevation">1dp</dimen>
+    <dimen name="nav_drawer_elevation">1dp</dimen>
+
+    <!--text-->
+    <dimen name="text_extra_small">9sp</dimen>
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text_medium">11sp</dimen>
+    <dimen name="text_large">12sp</dimen>
+    <dimen name="text_largest">13sp</dimen>
+    <dimen name="text_extra_large">14sp</dimen>
+
+    <dimen name="text_headline_m_16pt">13sp</dimen>
+    <dimen name="text_headline_m_15pt">12sp</dimen>
+    <dimen name="text_headline_m_14pt">11sp</dimen>
+    <dimen name="text_headline_u_15pt">12sp</dimen>
+    <dimen name="text_headline_u_14pt">11sp</dimen>
+
+    <dimen name="text_caption_u_16pt">13sp</dimen>
+    <dimen name="text_caption_u_15pt">12sp</dimen>
+    <dimen name="text_caption_u_14pt">11sp</dimen>
+    <dimen name="text_caption_u_13pt">10sp</dimen>
+    <dimen name="text_caption_u_12pt">9sp</dimen>
+
+    <dimen name="text_dialog_duel_info_title">8sp</dimen>
+    <dimen name="text_score_board">54sp</dimen>
+
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
+
+    <!-- other -->
+    <dimen name="hover_degree">80dp</dimen>
+    <dimen name="profile_image">80dp</dimen>
+    <dimen name="profile_image_medium">50dp</dimen>
+    <dimen name="profile_image_small">30dp</dimen>
+    <dimen name="profile_image_lite">20dp</dimen>
+    <dimen name="try_out_tag">100dp</dimen>
+
+    <dimen name="tap_target_menu_max_width">300dp</dimen>
+    <dimen name="focal_padding">40dp</dimen>
+    <dimen name="focal_radius_large">200dp</dimen>
+    <dimen name="radius_medium">8dp</dimen>
+    <dimen name="radius_small">7dp</dimen>
+
+    <dimen name="tab_height">45dp</dimen>
+
+    <dimen name="indicator_end">120dp</dimen>
+    <dimen name="indicator_start">56dp</dimen>
+    <dimen name="indicator_end_target">72dp</dimen>
+
+    <dimen name="max_dialog_image_width">68dp</dimen>
+    <dimen name="max_dialog_information_width">72dp</dimen>
+
+    <dimen name="max_card_view_height">112dp</dimen>
+
+    <dimen name="shimmer_height_normal">16dp</dimen>
+    <dimen name="shimmer_height_large">24dp</dimen>
+    <dimen name="shimmer_image">72dp</dimen>
+    <dimen name="shimmer_width_small">72dp</dimen>
+    <dimen name="shimmer_width_normal">176dp</dimen>
+    <dimen name="shimmer_width_large">320dp</dimen>
+
+    <dimen name="viewpager_next_item_visible">64dp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">72dp</dimen>
+
+    <dimen name="width_background_socmed">477px</dimen>
+    <dimen name="height_background_socmed">240px</dimen>
+
+    <!-- Button -->
+    <dimen name="button_text_size">16sp</dimen>
+
+    <!-- Chat -->
+    <dimen name="item_chat_padding">11dp</dimen>
+
+    <dimen name="corner_radius_medium">10dp</dimen>
+    <dimen name="corner_radius_rounded">25dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

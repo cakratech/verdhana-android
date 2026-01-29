@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmStockDetailDaily"
+            type="com.bcasekuritas.mybest.app.feature.stockdetail.daily.StockDetailDailyViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/bgWhite"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/include_ly_table_daily_one"
+                layout="@layout/layout_stock_detail_daily_one" />
+
+            <include
+                android:id="@+id/include_ly_table_daily_two"
+                layout="@layout/layout_stock_detail_daily_two" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_order_buy_divider_three"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/borderline" />
+    </LinearLayout>
+</layout>
+

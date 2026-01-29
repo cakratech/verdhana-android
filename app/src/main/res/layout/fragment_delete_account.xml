@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmDeleteAccount"
+            type="com.bcasekuritas.mybest.app.feature.profile.deleteaccount.DeleteAccountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ly_toolbar_delete_account"
+            layout="@layout/layout_toolbar"
+            android:visibility="gone" />
+
+        <!-- tolbar -->
+        <RelativeLayout
+            android:id="@+id/toolbar_delete_account"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_back" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/btn_contact_customer_service"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_delete_account">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                android:paddingBottom="25dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_title_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_title_delete_account"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_subtitle_one_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Account deletion process"
+                    app:txtStyle="softBold"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_delete_account"
+                    app:txtFor="title" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_desc_one_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginTop="2dp"
+                    android:text="You can delete your account at PT BCA Sekuritas (BCAS) at any time by following the necessary procedures outlined in our guidelines. Please review all important information regarding account deletion and its implications before formally requesting the closure of your account."
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subtitle_one_delete_account"
+                    app:txtFor="body" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_subtitle_two_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Things to know for your account deletion process:"
+                    app:txtStyle="softBold"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_one_delete_account"
+                    app:txtFor="title" />
+
+                <LinearLayout
+                    android:id="@+id/ly_point_one_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subtitle_two_delete_account">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:text="@string/bullet"
+                        app:txtFor="h4"
+                        android:layout_marginBottom="18dp"
+                        android:textStyle="bold" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="PT BCA Sekuritas will close your Securities Account upon receiving the signed paper authorization form."
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_point_two_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/ly_point_one_delete_account">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:text="@string/bullet"
+                        app:txtFor="h4"
+                        android:layout_marginBottom="33dp"
+                        android:textStyle="bold" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="Any remaining funds in your RDN (if any) will be transferred to your registered bank account, after deducting any applicable fees."
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_point_three_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/ly_point_two_delete_account">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:text="@string/bullet"
+                        app:txtFor="h4"
+                        android:layout_marginBottom="3dp"
+                        android:textStyle="bold" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="The account cannot be reactivated once deleted."
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_point_four_delete_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/ly_point_three_delete_account">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:text="@string/bullet"
+                        app:txtFor="h4"
+                        android:layout_marginBottom="18dp"
+                        android:textStyle="bold" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="To proceed with account deletion, please contact customer support."
+                        app:txtFor="body" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_contact_customer_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="15dp"
+            android:paddingVertical="10dp"
+            android:text="Contact Customer Service"
+            app:btnStyle="outline"
+            android:background="@drawable/bg_button_border_blue_white"
+            android:textColor="@color/buttonPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

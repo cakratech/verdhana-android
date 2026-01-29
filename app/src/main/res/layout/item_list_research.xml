@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <ImageView
+                android:id="@+id/iv_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_date_research"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:txtFor="body"
+                android:text="01 Jan 2023"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_title_research"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_title_research"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:txtFor="title"
+                app:txtStyle="bold"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                tools:text="Indonesian Economy Rise +5,17% YoY in 2Q23 "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_date_research"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_content"/>
+        
+    </LinearLayout>
+
+
+
+</layout>
+

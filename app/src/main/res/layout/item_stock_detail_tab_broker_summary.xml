@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="40dp"
+    android:paddingHorizontal="5dp"
+    android:orientation="horizontal">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_buy"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtStyle="softBold"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_buy_lot"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="green"
+        app:txtStyle="softBold" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_buy_val"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="green"
+        app:txtStyle="softBold" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_buy_avg"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="green"
+        app:txtStyle="softBold" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="#ddeaee"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_tag"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtStyle="softBold" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="#ddeaee"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_sell"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtStyle="softBold" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_sell_lot"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="red"
+        app:txtStyle="softBold" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_sell_val"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="red"
+        app:txtStyle="softBold" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item_sell_avg"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical|center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtColor="red"
+        app:txtStyle="softBold" />
+</LinearLayout>

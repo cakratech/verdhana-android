@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vmDisclaimer"
+            type="com.bcasekuritas.mybest.app.feature.disclaimer.DisclaimerViewModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:txtFor="h4"
+                app:txtStyle="bold"
+                android:text="Terms &amp; Conditions"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <ImageView
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/tv_title"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_close_black" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="24dp"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintRight_toRightOf="parent"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_one"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="1."
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_one_desc"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_one_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_one"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_one"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_two"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="2."
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_two_desc"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_one_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_two_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_two"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_two"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_three"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="3."
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_three_desc"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_two_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_three_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_three"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_three"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_four"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="4."
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_four_desc"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_three_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_four_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/tnc_eipo_four"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_four"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_four_desc_a"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:text="@string/tnc_eipo_four_a"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_four_desc"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_four_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_four_desc_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:text="@string/tnc_eipo_four_b"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_four_desc_a"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_four_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_four_desc_c"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:text="@string/tnc_eipo_four_c"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_four_desc_b"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_four_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_five"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="5."
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_five_desc"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_four_desc_c"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_five_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_five"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_five"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_six"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="6."
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_six_desc"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_five_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_six_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_six"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_six"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_seven"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="7."
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_seven_desc"
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_six_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_seven_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_seven"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_seven"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="8."
+                        android:layout_marginRight="8dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_eight_desc"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_seven_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eight_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_eight"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_eight"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eight_desc_a"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_eight_a"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_eight_desc"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eight_desc_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_eight_b"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_eight_desc_a"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_nine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="9."
+                        android:textAlignment="textEnd"
+                        app:layout_constraintRight_toLeftOf="@id/tv_number_nine_desc"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_eight_desc_b"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_nine_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_nine"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_nine"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="10."
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_nine_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_ten_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="@string/tnc_eipo_ten"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_ten"
+                        app:layout_constraintLeft_toRightOf="@id/tv_number_ten"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eleven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:text="11."
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_number_ten_desc"
+                        android:layout_marginLeft="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_number_eleven_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:txtFor="body"
+                        android:layout_marginRight="24dp"
+                        android:lineSpacingExtra="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="150dp"
+                        android:text="@string/tnc_eipo_eleven"
+                        app:layout_constraintTop_toTopOf="@id/tv_number_eleven"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_number_ten_desc"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

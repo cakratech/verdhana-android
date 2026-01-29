@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmPin"
+            type="com.bcasekuritas.mybest.app.feature.pin.PinViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/ly_toolbar_pin"
+            layout="@layout/layout_toolbar"
+            android:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar_pin"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_instruction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Please enter security PIN to continue"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:txtFor="title"
+                app:txtStyle="softBold"/>
+
+            <com.bcasekuritas.mybest.widget.edittext.CustomEditTextWithTitle
+                android:id="@+id/edt_pin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:hint="Enter Pin"
+                app:edittextfor="pin"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_forgot_pin"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_instruction"/>
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_forgot_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot PIN"
+                app:btnStyle="transBlue"
+                app:layout_constraintTop_toBottomOf="@id/edt_pin"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="1"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_4"
+                app:layout_constraintEnd_toStartOf="@id/btn_2"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/guideline_number" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="2"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_5"
+                app:layout_constraintEnd_toStartOf="@id/btn_3"
+                app:layout_constraintStart_toEndOf="@id/btn_1"
+                app:layout_constraintTop_toBottomOf="@id/guideline_number" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="3"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_6"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/btn_2"
+                app:layout_constraintTop_toBottomOf="@id/guideline_number" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="4"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_7"
+                app:layout_constraintEnd_toStartOf="@id/btn_5"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/btn_1" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="5"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                app:layout_constraintEnd_toStartOf="@id/btn_6"
+                app:layout_constraintStart_toEndOf="@id/btn_4"
+                app:layout_constraintTop_toBottomOf="@id/btn_2" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="6"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_9"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/btn_5"
+                app:layout_constraintTop_toBottomOf="@id/btn_3" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="7"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_invicible"
+                app:layout_constraintEnd_toStartOf="@id/btn_8"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/btn_4" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="8"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_0"
+                app:layout_constraintEnd_toStartOf="@id/btn_9"
+                app:layout_constraintStart_toEndOf="@id/btn_7"
+                app:layout_constraintTop_toBottomOf="@id/btn_5" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_state"
+                android:text="9"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/btn_erase"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/btn_8"
+                app:layout_constraintTop_toBottomOf="@id/btn_6" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_invicible"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/bg_circle_gray"
+                android:gravity="center"
+                android:textSize="30dp"
+                app:txtStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_bottom"
+                app:layout_constraintEnd_toStartOf="@id/btn_5"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/btn_7" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_0"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="30dp"
+                android:background="@drawable/bg_btn_state"
+                app:txtStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_bottom"
+                app:layout_constraintEnd_toStartOf="@id/btn_6"
+                app:layout_constraintStart_toEndOf="@id/btn_4"
+                app:layout_constraintTop_toBottomOf="@id/btn_8" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_erase"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/bg_btn_state"
+                android:padding="24dp"
+                android:src="@drawable/ic_backspace"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_bottom"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/btn_5"
+                app:layout_constraintTop_toBottomOf="@id/btn_9" />
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                app:btnStyle="default"
+                android:enabled="false"
+                app:layout_constraintTop_toBottomOf="@id/guideline_number_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+
+            <ProgressBar
+                android:id="@+id/progress_submit"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:indeterminateTint="@color/white"
+                android:layout_gravity="center"
+                app:layout_constraintLeft_toLeftOf="@id/btn_submit"
+                app:layout_constraintRight_toRightOf="@id/btn_submit"
+                app:layout_constraintTop_toTopOf="@id/btn_submit"
+                app:layout_constraintBottom_toBottomOf="@id/btn_submit"
+                tools:visibility="visible"
+                android:visibility="gone" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

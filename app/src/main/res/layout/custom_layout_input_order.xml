@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <View
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="400dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_enter_volume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Enter Volume"
+        android:padding="10dp"
+        android:gravity="center"
+        android:background="@drawable/bg_square_grey_border_soft_grey"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toTopOf="@id/btn_4"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="2"
+        app:layout_constraintStart_toEndOf="@id/btn_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toTopOf="@id/btn_5"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="3"
+        app:layout_constraintStart_toEndOf="@id/btn_2"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toTopOf="@id/btn_6"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_5"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_7"
+        />
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@id/btn_4"
+        app:layout_constraintTop_toBottomOf="@id/btn_2"
+        app:layout_constraintEnd_toStartOf="@id/btn_6"
+        app:layout_constraintBottom_toTopOf="@id/btn_9"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="6"
+        app:layout_constraintStart_toEndOf="@id/btn_5"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/btn_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_9"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_8"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintBottom_toTopOf="@id/btn_0"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="8"
+        app:layout_constraintStart_toEndOf="@id/btn_7"
+        app:layout_constraintEnd_toStartOf="@id/btn_9"
+        app:layout_constraintTop_toBottomOf="@id/btn_5"
+        app:layout_constraintBottom_toTopOf="@id/btn_00"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="9"
+        app:layout_constraintStart_toEndOf="@id/btn_8"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/btn_6"
+        app:layout_constraintBottom_toTopOf="@id/btn_backspace"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_00"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_00"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        android:text="00"
+        app:layout_constraintStart_toEndOf="@id/btn_0"
+        app:layout_constraintEnd_toStartOf="@id/btn_backspace"
+        app:layout_constraintTop_toBottomOf="@id/btn_8"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_backspace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="transBlack"
+        app:iconGravity="textStart"
+        app:icon="@drawable/ic_backspace"
+        app:layout_constraintStart_toEndOf="@id/btn_00"
+        app:layout_constraintTop_toBottomOf="@id/btn_9"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/borderline"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal"/>-->
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btn_1"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btn_4"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btn_7"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toEndOf="@id/btn_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toEndOf="@id/btn_2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/borderline"
+        app:layout_constraintStart_toEndOf="@id/btn_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <LinearLayout
+        android:id="@+id/ly_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toTopOf="@id/ly_2">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_l_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="L.High"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_l_high_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="11.125"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_1"
+        app:layout_constraintBottom_toTopOf="@id/ly_3">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="9.325"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="+0.5%"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_2"
+        app:layout_constraintBottom_toTopOf="@id/ly_4">
+
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="9.300"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="+0.32%"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_3"
+        app:layout_constraintBottom_toTopOf="@id/ly_5">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="9.725"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="+0%"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_4"
+        app:layout_constraintBottom_toTopOf="@id/ly_6">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="9.250"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="+0.26%"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_5"
+        app:layout_constraintBottom_toTopOf="@id/ly_7">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="9.225"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_val_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="+0.46%"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_6"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_l_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="L.Low"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_l_low_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="7.900"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_side_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="ly_1, ly_2, ly_3, ly_4, ly_5, ly_6, ly_7"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:flow_maxElementsWrap="1"
+        app:flow_wrapMode="aligned"
+        app:constraint_referenced_ids="btn_add_10, btn_add_50, btn_add_100, btn_add_half, btn_add_third,
+        btn_add_quarter,btn_add_fifth, btn_add_limit, btn_add_cash"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_volume"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal"/>
+
+    <!-- TODO RK: Add Border on button add -->
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="+10"/>
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="+50"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="+100"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_half"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="1/2"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_third"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="1/3"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_quarter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="1/4"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_fifth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="1/5"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_limit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="Limit"
+        android:textAllCaps="false"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_add_cash"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:btnStyle="outlineGrey"
+        android:text="Cash"
+        android:textAllCaps="false"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_side_value"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="btn_add_10, btn_add_50, btn_add_100, btn_add_half, btn_add_third,
+        btn_add_quarter, btn_add_fifth, btn_add_limit, btn_add_cash"
+        android:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

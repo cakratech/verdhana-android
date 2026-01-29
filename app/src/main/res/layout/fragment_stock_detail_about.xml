@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmStockDetailAbout"
+            type="com.bcasekuritas.mybest.app.feature.stockdetail.about.StockDetailAboutViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_informasi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_informasi_perusahaan"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:txtFor="title"
+                app:txtStyle="bold"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_company_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_nama_perusahaan"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_informasi"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_company_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": -"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_informasi"
+                app:txtStyle="softBold"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_tanggal_pencatatan"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_company_name"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": -"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_company_name"
+                app:txtStyle="softBold"
+                app:txtFor="body" />
+
+            <View
+                android:id="@+id/divider_sd_about1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_date" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_keterangan"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/divider_sd_about1"
+                app:txtStyle="bold"
+                app:txtFor="title" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:textAlignment="textStart"
+                android:justificationMode="inter_word"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_description"
+                app:txtFor="body" />
+
+            <View
+                android:id="@+id/divider_sd_about2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_description" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_business_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_bidang_usaha"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/divider_sd_about2"
+                app:txtStyle="bold"
+                app:txtFor="title" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_business_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_business_field"
+                app:txtFor="body" />
+
+            <View
+                android:id="@+id/divider_sd_about3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_business_field" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_company_lead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_pimpinan_perusahaan"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/divider_sd_about3"
+                app:txtStyle="bold"
+                app:txtFor="title" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_president_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_president_director"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_company_lead"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_president_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": -"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_company_lead"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_vice_president_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_vice_presodent_director"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/tv_sd_about_colon_vice_president_director"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_director"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_colon_vice_president_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": "
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_director"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/lv_sd_about_vice_president_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:lineSpacingExtra="0dp"
+                android:lineHeight="12dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/tv_sd_about_colon_vice_president_director"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_director" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_director"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_vice_president_director"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_colon_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": "
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_vice_president_director"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/lv_sd_about_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:lineSpacingExtra="0dp"
+                android:lineHeight="12dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sd_about_colon_director"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_vice_president_director" />
+
+            <View
+                android:id="@+id/divider_sd_about4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_director" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_komisioner"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/divider_sd_about4"
+                app:txtStyle="bold"
+                app:txtFor="title" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_president_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_president_commisioner"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_president_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": -"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_title_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_commisioner_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_commisioner"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/lv_sd_about_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:lineSpacingExtra="0dp"
+                android:lineHeight="12dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/tv_sd_about_colon_commisioner"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_commisioner" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_colon_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": "
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_sd_about_president_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_title_independent_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_independent_commissioner"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/tv_sd_about_colon_commisioner"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_sd_about_colon_independent_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=": "
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_commisioner"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/lv_sd_about_independent_commisioner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:lineSpacingExtra="0dp"
+                android:lineHeight="12dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/tv_sd_about_colon_independent_commisioner"
+                app:layout_constraintTop_toBottomOf="@id/lv_sd_about_commisioner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmCategories"
+            type="com.bcasekuritas.mybest.app.feature.categories.CategoriesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <include
+            android:id="@+id/ly_toolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <!-- filter categories -->
+        <LinearLayout
+            android:id="@+id/ly_filter_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar">
+
+            <!-- filter categories not expand-->
+            <LinearLayout
+                android:id="@+id/filter_not_expand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                tools:visibility="visible">
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        app:singleLine="true">
+
+                        <!-- Chips can be declared here, or added dynamically. -->
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_gainer"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:textSize="14dp"
+                            android:text="Top Gainers" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_losers"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Losers" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_volume"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Volume" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_freq"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Frequency" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_gainer_pct"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Gainers (%)" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_losers_pct"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Losers (%)" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_not_expanded_top_value"
+                            style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:textSize="14dp"
+                            android:text="Top Value" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:id="@+id/btn_not_expanded"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_chevron_down" />
+
+            </LinearLayout>
+
+            <!-- filter categories expand -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filter_expanded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_all_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="All Categories"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btn_expanded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_chevron_up"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup_expand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_all_categories">
+
+                    <!-- Chips can be declared here, or added dynamically. -->
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_gainer"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Gainers"
+                        android:checked="true"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_losers"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Losers"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_volume"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Volume"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_freq"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Frequency"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_gainer_pct"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Gainers (%)"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_losers_pct"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Losers (%)"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_expand_top_value"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Top Value"
+                        android:textSize="14dp"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!-- recyclerview categories -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_categories"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ly_filter_categories"
+            tools:listitem="@layout/item_categories" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

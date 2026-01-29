@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_dot"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_six_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/iv_dot"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="2"
+        tools:text="BA"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:txtColor="white"
+        app:txtStyle="bold"
+        app:txtFor="caption"
+        app:layout_constraintLeft_toLeftOf="@id/iv_logo"
+        app:layout_constraintRight_toRightOf="@id/iv_logo"
+        app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_logo"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_stock_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="title"
+        app:txtStyle="bold"
+        android:text="BBCA"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_company_name"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_company_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Bank Central Asia Tbk."
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete"
+        app:layout_constraintTop_toBottomOf="@id/tv_stock_code"
+        app:layout_constraintStart_toStartOf="@id/tv_stock_code"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Icon.Trans.Blue"
+        app:icon="@drawable/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

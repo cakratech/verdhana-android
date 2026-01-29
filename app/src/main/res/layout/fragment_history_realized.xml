@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmRealized"
+            type="com.bcasekuritas.mybest.app.feature.portfolio.realized.RealizedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <include
+            android:id="@+id/ly_toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- layout no history realized/ empty history realized -->
+        <LinearLayout
+            android:id="@+id/ly_history_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_no_realized" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:text="No realized gain/loss available"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:txtFor="h4"
+                app:txtStyle="bold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:text="There is no realized gain/loss available yet"
+                android:textAlignment="center" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_discover_stocks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Discover Stocks"
+                android:textAlignment="center"
+                app:txtColor="blue"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- box realized -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_box_realized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgSecondary"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_realized_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_security_warning"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="Total Realized Gain/Loss"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:txtColor="noChanges" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_realized_gain_loss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_realized_info"
+                app:txtColor="secondaryGrey"
+                app:txtFor="big"
+                app:txtStyle="softBold" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_filter_stock"
+            android:layout_width="150dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_layout_border_5_no_padding_ddeaee"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:drawableTint="@color/textBCABlue"
+            android:gravity="center|left"
+            android:paddingHorizontal="8dp"
+            android:text="All Stocks"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_box_realized"
+            app:txtColor="blue"
+            app:txtFor="body"
+            app:txtStyle="softBold" />
+
+        <View
+            android:id="@+id/view_stock_dropdown_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_filter_year"
+            app:layout_constraintStart_toStartOf="@id/tv_filter_stock"
+            app:layout_constraintTop_toBottomOf="@id/tv_filter_stock" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_filter_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_1269ec_56"
+            android:drawableEnd="@drawable/ic_row_expand_down_blue"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:drawablePadding="6dp"
+            android:text="2025"
+            app:layout_constraintBottom_toBottomOf="@id/tv_filter_stock"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_filter_stock"
+            app:txtColor="chart"
+            app:txtFor="body"
+            app:txtStyle="softBold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_realized"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_filter_stock"
+            tools:listitem="@layout/item_history_realized_month" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/ly_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="ly_box_realized, tv_filter_stock, tv_filter_year"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>
+

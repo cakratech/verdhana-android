@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmProfile"
+            type="com.bcasekuritas.mybest.app.feature.profile.profilelanding.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <include
+            android:id="@+id/ly_toolbar_profile"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_profile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar_profile">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout_profile"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="12dp">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.05" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.95" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout_profile"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                            app:layout_constraintStart_toStartOf="@id/guideline_start"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/image_profile"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/ic_profile_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                android:id="@+id/tv_image_profile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="@id/image_profile"
+                                app:layout_constraintLeft_toLeftOf="@id/image_profile"
+                                app:layout_constraintRight_toRightOf="@id/image_profile"
+                                app:layout_constraintTop_toTopOf="@id/image_profile"
+                                app:txtFor="h4"
+                                app:txtStyle="bold"
+                                tools:text="RB" />
+
+                            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                android:id="@+id/tv_profile_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                app:layout_constraintBottom_toTopOf="@id/tv_profile_title_no_account"
+                                app:layout_constraintStart_toEndOf="@id/image_profile"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:txtFor="title"
+                                app:txtStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/ic_arrow_right_black"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_profile_name"
+                                app:layout_constraintStart_toEndOf="@id/tv_profile_name"
+                                app:layout_constraintTop_toTopOf="@id/tv_profile_name" />
+
+                            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                android:id="@+id/tv_profile_title_no_account"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/sample_status_no_account"
+                                app:layout_constraintBottom_toBottomOf="@id/image_profile"
+                                app:layout_constraintStart_toEndOf="@id/image_profile"
+                                app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
+                                app:txtColor="grey"
+                                app:txtFor="caption"
+                                app:txtStyle="softBold" />
+
+                            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                android:id="@+id/tv_profile_no_account"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="3dp"
+                                android:text=""
+                                app:layout_constraintBottom_toBottomOf="@id/tv_profile_title_no_account"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tv_profile_title_no_account"
+                                app:layout_constraintTop_toTopOf="@id/tv_profile_title_no_account"
+                                app:txtColor="grey"
+                                app:txtFor="caption"
+                                app:txtStyle="softBold" />
+
+                            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                android:id="@+id/tv_profile_switch_account"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/text_switch_account"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toEndOf="@id/image_profile"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_profile_no_account"
+                                app:txtColor="blue"
+                                app:txtFor="caption"
+                                app:txtStyle="bold" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout_balance"
+                            android:layout_width="0dp"
+                            android:layout_height="75dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/bgPrimary"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/constraintLayout_profile">
+
+                            <LinearLayout
+                                android:id="@+id/ll_trading_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/ll_balance_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/text_trading_balance"
+                                    app:txtColor="grey"
+                                    app:txtFor="body"
+                                    app:txtStyle="softBold" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:id="@+id/tv_trading_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0"
+                                    app:txtFor="title"
+                                    app:txtStyle="softBold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_balance_icon"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="end"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/ll_trading_info"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:id="@+id/ly_top_up"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/profile_top_up" />
+
+                                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/text_top_up"
+                                        app:txtFor="tiny"
+                                        app:txtStyle="softBold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ly_withdraw"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/profile_withdraw" />
+
+                                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/text_withdraw"
+                                        app:txtFor="tiny"
+                                        app:txtStyle="softBold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ly_history"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/profile_history" />
+
+                                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/text_history"
+                                        app:txtFor="tiny"
+                                        app:txtStyle="softBold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_account"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/text_account"
+                            app:layout_constraintStart_toStartOf="@id/guideline_start"
+                            app:layout_constraintTop_toBottomOf="@id/constraintLayout_balance"
+                            app:txtFor="title"
+                            app:txtStyle="bold" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout_account"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:foregroundGravity="center"
+                            android:paddingHorizontal="16dp"
+                            android:paddingBottom="16dp"
+                            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                            app:layout_constraintStart_toStartOf="@id/guideline_start"
+                            app:layout_constraintTop_toBottomOf="@id/tv_account">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_security"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/icon_security"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_security"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_security"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_security"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_security"
+                                    app:layout_constraintStart_toEndOf="@id/icon_security"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_estatements"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_security">
+
+                                <ImageView
+                                    android:id="@+id/icon_estatements"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_estatement"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_estatements"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_e_statements"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_estatements"
+                                    app:layout_constraintStart_toEndOf="@id/icon_estatements"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_disclaimer"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_estatements">
+
+                                <ImageView
+                                    android:id="@+id/icon_disclaimer"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_disclaimer"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_disclaimer"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_disclaimer"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_disclaimer"
+                                    app:layout_constraintStart_toEndOf="@id/icon_disclaimer"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_price_alert"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_disclaimer">
+
+                                <ImageView
+                                    android:id="@+id/icon_price_alert"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_timer"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_price_alert"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_price_alert"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_price_alert"
+                                    app:layout_constraintStart_toEndOf="@id/icon_price_alert"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_notifications"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_price_alert">
+
+                                <ImageView
+                                    android:id="@+id/icon_notifications"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_notification_blue"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_notifications"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/text_notifications"
+                                    app:txtFor="body"
+                                    android:layout_marginHorizontal="12dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_notifications"
+                                    app:layout_constraintStart_toEndOf="@id/icon_notifications"
+                                    app:layout_constraintTop_toTopOf="parent">
+                                </com.bcasekuritas.mybest.widget.textview.CustomTextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_manage_device"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_notifications">
+
+                                <ImageView
+                                    android:id="@+id/icon_manage_device"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_manage_device"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_device"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="Managed Device"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_device"
+                                    app:layout_constraintStart_toEndOf="@id/icon_manage_device"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_dark_mode"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_manage_device">
+
+                                <ImageView
+                                    android:id="@+id/icon_dark_mode"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_dark_mode"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.materialswitch.MaterialSwitch
+                                    android:id="@+id/switch_dark_mode"
+                                    style="@style/ThemeOverlay.App.SwitchProfile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:checked="false"
+                                    android:clickable="false"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_dark_mode"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/switch_dark_mode"
+                                    app:layout_constraintStart_toEndOf="@id/icon_dark_mode"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_smart_login"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_dark_mode">
+
+                                <ImageView
+                                    android:id="@+id/icon_smart_login"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_biometrics_face_id_blue"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.materialswitch.MaterialSwitch
+                                    android:id="@+id/switch_smart_login"
+                                    style="@style/ThemeOverlay.App.SwitchProfile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:checked="false"
+                                    android:clickable="false"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_smart_login"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/switch_smart_login"
+                                    app:layout_constraintStart_toEndOf="@id/icon_smart_login"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_english"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_smart_login">
+
+                                <ImageView
+                                    android:id="@+id/icon_english"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_language"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.materialswitch.MaterialSwitch
+                                    android:id="@+id/switch_english"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:checked="false"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:thumbIcon="@drawable/ic_english"
+                                    app:thumbIconTint="@null"
+                                    app:trackDecorationTint="@color/white"
+                                    app:trackTint="@color/switch_background_color_smart_login" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_english"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/switch_english"
+                                    app:layout_constraintStart_toEndOf="@id/icon_english"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_others"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/text_others"
+                            app:layout_constraintStart_toStartOf="@id/guideline_start"
+                            app:layout_constraintTop_toBottomOf="@id/constraintLayout_account"
+                            app:txtFor="title"
+                            app:txtStyle="bold" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout_others"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:foregroundGravity="center"
+                            android:paddingHorizontal="16dp"
+                            android:paddingBottom="16dp"
+                            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                            app:layout_constraintStart_toStartOf="@id/guideline_start"
+                            app:layout_constraintTop_toBottomOf="@id/tv_others">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_line_setting"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/icon_line_setting"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_line_setting"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_line_setting"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="Line Setting"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_line_setting"
+                                    app:layout_constraintStart_toEndOf="@id/icon_line_setting"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_help"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_line_setting">
+
+                                <ImageView
+                                    android:id="@+id/icon_help"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_help_blue"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_help"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_help"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_help"
+                                    app:layout_constraintStart_toEndOf="@id/icon_help"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_about"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_help">
+
+                                <ImageView
+                                    android:id="@+id/icon_about"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_about"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_about"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_about"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_about"
+                                    app:layout_constraintStart_toEndOf="@id/icon_about"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout_logout"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/constraintLayout_about">
+
+                                <ImageView
+                                    android:id="@+id/icon_logout"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_logout"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/image_chevron_logout"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_right_black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="12dp"
+                                    android:text="@string/text_logout"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/image_chevron_logout"
+                                    app:layout_constraintStart_toEndOf="@id/icon_logout"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:txtFor="body" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_det_introducing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/det_text_introducing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:txtFor="caption" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_det_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Buying Limit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_introducing"
+            app:txtFor="big"
+            app:txtStyle="bold"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_det_desc_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/det_description_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_title"
+            app:txtFor="body" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_det_subtitle_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/det_text_payment_terms"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_desc_title"
+            app:txtFor="title"
+            app:txtStyle="bold"/>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/det_expand_text_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:el_expanded="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_subtitle_one">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_det_desc_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/det_desc_payment_terms"
+                app:txtFor="body" />
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

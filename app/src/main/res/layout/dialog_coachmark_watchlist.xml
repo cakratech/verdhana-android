@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmCoachmark"
+            type="com.bcasekuritas.mybest.app.feature.dialog.coachmark.CoachmarkViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/txtWhiteBlack">
+
+        <View
+            android:id="@+id/bg_coachmark_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#C3000000"
+            android:elevation="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/bg_coachmark_bot"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#C3000000"
+            android:elevation="2dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/bg_coachmark_top"
+            android:orientation="vertical">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_coachmark_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 of 3"
+                app:txtColor="white"
+                android:layout_marginLeft="16dp"
+                app:txtFor="title"
+                android:layout_marginTop="67dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_coachmark_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watchlist"
+                app:txtStyle="bold"
+                android:layout_marginTop="8dp"
+                app:txtColor="white"
+                app:txtFor="h3"
+                android:layout_marginLeft="16dp"
+                android:elevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_coachmark_step"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_coachmark_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can add your favorite stocks to the watchlist and monitor their activity with ease"
+                app:txtColor="white"
+                android:layout_marginHorizontal="16dp"
+                android:elevation="2dp"
+                app:txtFor="title"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_coachmark_title"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:weightSum="2">
+
+                <com.bcasekuritas.mybest.widget.button.CustomButton
+                    android:id="@+id/btn_coachmark_skip"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="Skip"
+                    android:padding="0dp"
+                    android:layout_marginRight="8dp"
+                    app:btnStyle="transOutlineWhite"/>
+
+                <com.bcasekuritas.mybest.widget.button.CustomButton
+                    android:id="@+id/btn_coachmark_next"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="Next"
+                    android:padding="0dp"
+                    android:layout_marginLeft="8dp"
+                    app:btnStyle="white"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/bg_card"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/rounded_0d54e1_16_radius_bottom"/>
+
+            <!-- menu home -->
+        <HorizontalScrollView
+                android:id="@+id/ly_menu_home"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_card">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/menu_fast_order"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_flash_orange" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="Fast Order"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/borderline" />
+
+                    <LinearLayout
+                        android:id="@+id/menu_my_order"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_receipt_item" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="My Orders"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/borderline" />
+
+                    <LinearLayout
+                        android:id="@+id/menu_running_trade"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_chart" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="Running Trade"
+                            android:textAlignment="center"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/borderline" />
+
+                    <LinearLayout
+                        android:id="@+id/menu_calendar"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_menu_board" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="Calendar"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/borderline" />
+
+                    <LinearLayout
+                        android:id="@+id/menu_stock_picks"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_status_up" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="Stock Picks"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/borderline"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/menu_news"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_news_menu" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:text="News"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_price_alert"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_attention" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="Price Alert"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+
+        <com.bcasekuritas.mybest.widget.banner.BannerHome
+            android:id="@+id/banner_home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintDimensionRatio="2.3:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_menu_home" />
+
+        <!-- watchlist -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_watchlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner_home">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_watchlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Watchlist"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:txtFor="title"
+                app:txtStyle="softBold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_manage_watchlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
+                android:text="Manage"
+                app:layout_constraintBottom_toBottomOf="@id/tv_watchlist"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_watchlist"
+                app:txtColor="blueWhite"
+                app:txtFor="body"
+                app:txtStyle="softBold" />
+
+            <!-- chip watchlist -->
+            <HorizontalScrollView
+                android:id="@+id/scv_chip_group_watchlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_watchlist">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_watchlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="10dp"
+                    app:chipSpacingVertical="4dp"
+                    app:selectionRequired="true"
+                    android:clickable="false"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <!-- Chips can be declared here, or added dynamically. -->
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip1_watchlist"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:textSize="14dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip2_watchlist"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Faved Banks"
+                        android:textSize="14dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip3_watchlist"
+                        style="@style/Widget.App.Chip.Blue.Solid.White.Stroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Retail"
+                        android:checked="true"
+                        android:textSize="14dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_coachmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clickable="false"
+                android:focusable="true"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scv_chip_group_watchlist"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_sectors" />
+
+            <!-- layout no active investment -->
+            <LinearLayout
+                android:id="@+id/ly_no_data_portfolio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="54dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scv_chip_group_watchlist"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_document_no_data" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="There is no active investment"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:txtFor="h3" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Your portfolio will appear here."
+                    android:textAlignment="center"
+                    android:textColor="#5E5E5E"
+                    app:txtFor="body" />
+
+            </LinearLayout>
+
+            <!-- box no watchlist -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_no_watchlist_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_f0f5f8_8"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scv_chip_group_watchlist">
+
+                <ImageView
+                    android:id="@+id/iv_watchlist_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_box_watchlist_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_box_watchlist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Add your favorite stocks and monitor them here"
+                    app:layout_constraintLeft_toRightOf="@id/iv_watchlist_home"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_add_stocks_box_watchlist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Add Stocks"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/iv_watchlist_home"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_box_watchlist"
+                    app:txtColor="blueWhite"
+                    app:txtStyle="bold" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_coach_mark_chip"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/rcv_coachmark"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_watchlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="tv_manage_watchlist, rcv_coachmark" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_no_watchlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="box_no_watchlist_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider_new_stocks"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#DFDFDF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_watchlist" />
+
+        <!-- first time login -->
+        <LinearLayout
+            android:id="@+id/ly_first_time_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="38dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/divider_new_stocks">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="new to stocks investment?"
+                app:txtFor="body" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="What's great for new investors"
+                app:txtFor="title"
+                app:txtStyle="bold" />
+
+            <!-- chip new investment -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_new_investment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:singleSelection="true">
+
+                <!-- Chips can be declared here, or added dynamically. -->
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip1_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LQ45 Stocks"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip2_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shariah"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip3_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IDX30"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip4_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kompas 100"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip5_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JII"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip6_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rising This Week"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip7_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Property"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip8_new_investment"
+                    style="@style/Widget.App.Chip.White.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Banking &amp; Finance"
+                    android:textSize="14sp"
+                    app:chipMinTouchTargetSize="24dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- box first time login -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_new_investment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_f0f5f8_8"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_new_investment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_box_new_investment_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/iv_new_investment"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="Completely new in investment?"
+                        app:txtFor="body"
+                        app:txtStyle="softBold"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_new_investment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="We've got you covered. Check out our bite-sized learning contents"
+                        android:textColor="#5E5E5E"
+                        android:textSize="12sp" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Open Youtube"
+                        app:txtColor="blue"
+                        app:txtFor="caption"
+                        app:txtStyle="softBold"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_first_time_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="divider_new_stocks, ly_first_time_login"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/drop_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:elevation="1dp"
+            android:layout_marginTop="-7dp"
+            app:layout_constraintTop_toTopOf="@id/bottom_navigation"
+            android:background="@drawable/bg_drop_shadow"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_bottom_sheet"
+            app:elevation="1dp"
+            app:useCompatPadding="true"
+            app:itemRippleColor="@null"
+            app:itemIconSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/BottomNavigation.ActiveItemTextAppearance"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

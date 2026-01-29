@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_item"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginStart="8dp"
+        android:text="88,823 B"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        />
+
+</RelativeLayout>

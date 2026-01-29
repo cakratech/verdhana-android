@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_data_item"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_period"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/bgPrimary"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_operating"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_investing"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:minHeight="30dp"
+        android:paddingHorizontal="5dp"
+        app:txtStyle="bold"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_financing"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_net_cash_flow"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_capital_expenditure"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text=""
+        app:txtStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_free_cash_flow"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+</LinearLayout>

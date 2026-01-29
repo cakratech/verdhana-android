@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmOrderBook"
+            type="com.bcasekuritas.mybest.app.feature.stockdetail.orderbook.OrderBookViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgWhite">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <!--  Layout Order Book Table-->
+            <LinearLayout
+                android:id="@+id/ll_order_book_header_table"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/bgPrimary"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="Lot"
+                    android:textColor="@color/textPrimary"
+                    app:txtFor="caption"
+                    app:txtStyle="bold"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center_vertical"
+                    android:paddingEnd="10dp"
+                    android:text="Bid"
+                    android:textColor="@color/textPrimary"
+                    app:txtFor="caption"
+                    app:txtStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/bgPrimary"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="10dp"
+                    android:layout_marginLeft="1dp"
+                    android:text="Ask"
+                    android:textColor="@color/textPrimary"
+                    app:txtFor="caption"
+                    app:txtStyle="bold" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center_vertical"
+                    android:paddingEnd="20dp"
+                    android:text="Lot"
+                    android:textColor="@color/textPrimary"
+                    app:txtFor="caption"
+                    app:txtStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_order_book_table_buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="360dp"
+                android:orientation="vertical"
+                tools:itemCount="10"
+                android:clickable="false"
+                android:nestedScrollingEnabled="false"
+                android:layoutAnimation="@{null}"
+                android:stateListAnimator="@{null}"
+                tools:listitem="@layout/item_orderbook_buy"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_order_book_header_table" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/rcv_order_book_table_buy" />
+
+            <View
+                android:id="@+id/line_center"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/rcv_order_book_table_buy" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_order_book_table_sell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="360dp"
+                tools:itemCount="10"
+                android:layoutAnimation="@{null}"
+                android:stateListAnimator="@{null}"
+                android:orientation="vertical"
+                android:layout_marginLeft="1dp"
+                android:clickable="false"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_center"
+                app:layout_constraintTop_toBottomOf="@+id/ll_order_book_header_table"
+                tools:listitem="@layout/item_orderbook_sell" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/borderline"
+                app:layout_constraintStart_toStartOf="@id/guideline_right"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/rcv_order_book_table_sell" />
+
+            <View
+                android:id="@+id/view_order_buy_divider_three"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/borderline"
+                android:paddingBottom="10dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_center" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

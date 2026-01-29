@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brandSecondaryBlue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/bca_circle"/>
+
+            <LinearLayout
+                android:layout_weight="0.7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_notif_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:txtFor="title"
+                    app:txtColor="white"
+                    app:txtStyle="softBold"
+                    android:text="-"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_notif_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:txtFor="title"
+                    app:txtColor="white"
+                    android:text="-"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btn_close"
+                android:layout_weight="0.3"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginEnd="0dp"
+                android:weightSum="1">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/tv_chck_order"
+                    android:background="@color/borderWhite"
+                    android:layout_marginEnd="16dp"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_chck_order"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:txtFor="title"
+                    app:txtColor="white"
+                    app:txtStyle="softBold"
+                    android:text="Close"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

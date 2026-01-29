@@ -1,0 +1,191 @@
+ext {
+    //Android
+    androidMinSdkVersion            = 29
+    androidTargetSdkVersion         = 35
+    androidCompileSdkVersion        = 35
+
+    //Lib
+    retrofitVersion                 = '2.9.0'
+    rxJavaVersion                   = '3.1.3'
+    rxAndroid                       = '3.0.0'
+    daggerVersion                   = '2.48'
+    okhttpVersion                   = '4.10'
+    gsonVersion                     = '2.10.1'
+    androidAnnotationsVersion       = '28.0.0'
+    glideVersion                    = '4.16.0'
+    workRunTimeVersion              = '2.8.1'
+    lottieVersion                   = '6.1.0'
+    shimmerVersion                  = '0.5.0'
+    roomKtxVersion                  = '2.5.2'
+    multidexVersion                 = '2.0.1'
+    facebookSdkVersion              = '13.2.0'
+    imageCropperVersion             = '4.5.0'
+    googleAuthVersion               = '20.6.0'
+    expandLayout                    = '2.9.2'
+    splashScreen                    = '1.0.0'
+    talsecSecurity                  = '17.0.0'
+
+    //androidX
+    constraintVersion               = '2.1.4'
+    legacySupportVersion            = '1.0.0'
+    coreVersion                     = '1.10.1'
+    coreTestVersion                 = '2.1.0'
+    pagingVersion                   = '3.1.1'
+    roomVersion                     = '2.6.1'
+    liveDataVersion                 = '2.6.1'
+    lifecycleVersion                = '2.6.1'
+//    lifeCycleArchVersion            = '1.1.1'
+    navVersion                      = '2.5.3'
+    coroutinesVersion               = '1.7.3'
+    coroutinesTestVersion           = '1.3.7'
+    fragmentVersion                 = '1.6.1'
+    fragmentTestVersion             = '1.4.0'
+    hilt                            = '2.51.1'
+    recyclerViewVersion             = '1.3.1'
+    viewpager2Version               = '1.0.0'
+    swipeRefreshLayoutVersion       = '1.1.0'
+    materialVersion                 = '1.9.0'
+    cardViewVersion                 = '1.0.0'
+    appCompatVersion                = '1.6.1'
+    flexboxVersion                  = '3.0.0'
+    browserVersion                  = '1.5.0'
+    fixHeaderTableVersion           = '0.0.0.5'
+
+    //kotlin std lib
+    kotlinStdLib                    = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //compose
+    composeVersion                  = '1.4.3'
+    activityComposeVersion          = '1.7.2'
+    activityKtx                     = '1.9.3'
+
+    //firebase
+    firebaseVersion                 = '33.16.0'
+
+    //firebase UI
+    firebaseUIFirestoreVersion      = '8.0.0'
+
+    //logs
+    chuckerVersion                  = '4.0.0'
+    timberVersion                   = '5.0.1'
+
+    //view pager
+    viewPagerVersion                = '1.0.0'
+
+    compose = [
+            ui        : "androidx.compose.ui:ui:$composeVersion",
+            tooling   : "androidx.compose.ui:ui-tooling:$composeVersion",
+            foundation: "androidx.compose.foundation:foundation:$composeVersion",
+            runtime   : "androidx.compose.runtime:runtime:$composeVersion",
+            livedata  : "androidx.compose.runtime:runtime-livedata:$composeVersion",
+            material  : [
+                    "androidx.compose.material:material:$composeVersion",
+                    "androidx.compose.material:material-icons-core:$composeVersion",
+                    "androidx.compose.material:material-icons-extended:$composeVersion"
+            ]
+    ]
+
+    firebase = [
+            bom           : "com.google.firebase:firebase-bom:$firebaseVersion",
+            analyticsKtx  : "com.google.firebase:firebase-analytics-ktx",
+            firestoreKtx  : "com.google.firebase:firebase-firestore-ktx",
+            messagingKtx  : "com.google.firebase:firebase-messaging-ktx",
+            storageKtx    : "com.google.firebase:firebase-storage-ktx",
+            configKtx     : "com.google.firebase:firebase-config-ktx",
+            crashlitycsNdk: "com.google.firebase:firebase-crashlytics-ndk",
+            firestoreUI   : "com.firebaseui:firebase-ui-firestore:$firebaseUIFirestoreVersion"
+    ]
+
+    logs = [
+            timber     : "com.jakewharton.timber:timber:$timberVersion",
+            chucker    : "com.github.chuckerteam.chucker:library:$chuckerVersion",
+            chuckerNoOp: "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+    ]
+
+    libs = [
+            retrofit                 : [
+                    "com.squareup.retrofit2:retrofit:$retrofitVersion",
+                    "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+                    "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+                    "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+            ],
+            okhttp                 : [
+                    "com.squareup.okhttp3:okhttp:$okhttpVersion",
+                    "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+            ],
+            dagger                 : [
+                    "com.google.dagger:dagger:$daggerVersion",
+                    "com.google.dagger:dagger-compiler:$daggerVersion",
+                    "com.google.dagger:dagger-android:$daggerVersion",
+                    "com.google.dagger:dagger-android-support:$daggerVersion",
+                    "com.google.dagger:dagger-android-processor:$daggerVersion"
+            ],
+            talsecSecurityRASP       : "com.aheaditec.talsec.security:TalsecSecurity-Community:$talsecSecurity",
+            gson                     : "com.google.code.gson:gson:$gsonVersion",
+            androidAnnotations       : "com.android.support:support-annotations:$androidAnnotationsVersion",
+            glide                    : "com.github.bumptech.glide:glide:$glideVersion",
+            glideCompiler            : "com.github.bumptech.glide:compiler:$glideVersion",
+            hiltAndroid              : "com.google.dagger:hilt-android:$hilt",
+            hiltCompilerAndroid      : "com.google.dagger:hilt-android-compiler:$hilt",
+
+            lottie                   : "com.airbnb.android:lottie:$lottieVersion",
+            shimmer                  : "com.facebook.shimmer:shimmer:$shimmerVersion",
+            workRunTime              : "androidx.work:work-runtime:$workRunTimeVersion",
+            multidex                 : "androidx.multidex:multidex:$multidexVersion",
+            facebookSdk              : "com.facebook.android:facebook-android-sdk:$facebookSdkVersion",
+            googleAuth               : "com.google.android.gms:play-services-auth:$googleAuthVersion",
+            imageCropper             : "com.vanniktech:android-image-cropper:$imageCropperVersion",
+            gifDrawable              : "pl.droidsonroids.gif:android-gif-drawable:1.2.24",
+            spinKitView              : "com.github.ybq:Android-SpinKit:1.4.0",
+            intuitSdp                : "com.intuit.sdp:sdp-android:1.0.6",
+            intuitSsp                : "com.intuit.ssp:ssp-android:1.0.6",
+            easyPermisson            : "pub.devrel:easypermissions:3.0.0",
+            coil                     : "io.coil-kt:coil:2.0.0",
+            photoView                : "com.github.chrisbanes:PhotoView:2.3.0",
+            securePref               : "com.scottyab:secure-preferences-lib:0.1.7",
+            jodaTime                 : "joda-time:joda-time:2.10.6",
+            expandLayout             : "com.github.cachapa:ExpandableLayout:$expandLayout",
+            splashScreen             : "androidx.core:core-splashscreen:$splashScreen",
+            hawk                     : "com.orhanobut:hawk:2.0.1",
+            biometric                : "androidx.biometric:biometric:1.1.0",
+            chart                    : "com.github.lecho:hellocharts-library:1.5.8@aar",
+            viewpager                : "androidx.viewpager2:viewpager2:$viewPagerVersion",
+            protobuf                 : "com.google.protobuf:protobuf-java:2.6.1",
+            monthAndYearPicker       : "io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0",
+            stockChart               : "com.github.PhilJay:MPAndroidChart:v3.1.0",
+            fixheadertable           : "com.github.Zardozz:fixedheadertablelayout:$fixHeaderTableVersion"
+
+    ]
+
+    support = [
+            material             : "com.google.android.material:material:$materialVersion",
+            appcompat            : "androidx.appcompat:appcompat:$appCompatVersion",
+            fragment             : "androidx.fragment:fragment-ktx:$fragmentVersion",
+            cardview             : "androidx.cardview:cardview:$cardViewVersion",
+            constraint           : "androidx.constraintlayout:constraintlayout:$constraintVersion",
+            recyclerview         : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            viewpager2           : "androidx.viewpager2:viewpager2:$viewpager2Version",
+            support              : "androidx.legacy:legacy-support-v4:$legacySupportVersion",
+            swiperefreshlayout   : "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion",
+            kotlinextensions     : "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version",
+            core                 : "androidx.core:core-ktx:$coreVersion",
+            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
+            room                 : "androidx.room:room-runtime:$roomVersion",
+            roomCommon           : "androidx.room:room-common:$roomVersion",
+            roomKtx              : "androidx.room:room-ktx:$roomKtxVersion",
+            paging               : "androidx.paging:paging-runtime:$pagingVersion",
+            liveData             : "androidx.lifecycle:lifecycle-livedata-ktx:$liveDataVersion",
+//            lifecycle            : "android.arch.lifecycle:extensions:$lifeCycleArchVersion",
+            lifecycleVM          : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+            lifecycleVMSavedState: "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion",
+            navigationFragment   : "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationUi         : "androidx.navigation:navigation-ui-ktx:$navVersion",
+            coroutines           : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+            coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            coroutinesPlay       : "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion",
+            activityCompose      : "androidx.activity:activity-compose:$activityComposeVersion",
+            activityKtx          : "androidx.activity:activity-ktx:$activityKtx",
+            browser              : "androidx.browser:browser:$browserVersion",
+            flexbox              : "com.google.android.flexbox:flexbox:$flexboxVersion"
+    ]
+}

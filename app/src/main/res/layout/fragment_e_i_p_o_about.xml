@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmEIPOAbout"
+            type="com.bcasekuritas.mybest.app.feature.e_ipo.eipodetail.about.EIPOAboutViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_about_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="About Company"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:txtFor="title"
+                    app:txtStyle="bold" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_about_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_about_title"
+                    app:txtFor="body"
+                    tools:text="Cinema XXI is a well-known chain of movie theaters in Indonesia. It is one of the largest cinema chains in the country, owned and operated by PT Nusantara Sejahtera Raya (NSR), part of the Lippo Group. Cinema XXI offers a wide selection of movies, including both local and international films." />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_learn_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Learn More"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_about_desc"
+                    app:txtColor="blue"
+                    app:txtFor="caption"
+                    app:txtStyle="bold" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_key_information_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Key Information"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_learn_more"
+                    app:txtFor="title"
+                    app:txtStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ly_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/tv_key_information_title">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Code"
+                        app:layout_constraintStart_toStartOf="@id/guideline_start"
+                        app:layout_constraintTop_toBottomOf="@id/tv_key_information_title"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_code_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        tools:text="CNMA"
+                        app:txtStyle="softBold"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_sector"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_code">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_sector"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Sector"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_sector_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        app:txtStyle="softBold"
+                        tools:text="Non-Primary Consumer Goods"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_sub_sector"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_sector">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_sub_sector"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Sub Sector"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_sub_sector_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        app:txtStyle="softBold"
+                        tools:text="Recreational Goods"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_business"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_sub_sector">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_business_field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Business Field"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_business_field_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        app:txtStyle="softBold"
+                        tools:text="Cinema &amp; Restaurant"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_business">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Address"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_address_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        app:txtStyle="softBold"
+                        tools:text="Jl. KH Wahid Hasyim no.96-A Jakarta Pusat 10340"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_website"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_address">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_website"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Website"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_website_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        tools:text="https://www.cinema21.co.id"
+                        app:txtColor="blue"
+                        app:txtStyle="bold"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_shares"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_website">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_shares_offered"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="The Number Of Shared Offered"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_shares_offered_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        app:txtStyle="softBold"
+                        android:layout_marginLeft="16dp"
+                        tools:text="83.350.000 Lot"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_percent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_shares">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_total_share"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="% of Total Shares"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_total_share_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        app:txtStyle="softBold"
+                        tools:text="10%"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_participant"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_percent">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_participant_admin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Participant Admin"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_participant_admin_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:layout_marginLeft="16dp"
+                        tools:text="CC - Mandiri Sekuritas"
+                        app:txtStyle="softBold"
+                        app:txtFor="body" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_underwriter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+                    app:layout_constraintRight_toRightOf="@id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/ly_participant">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_underwriter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Underwriter"
+                        app:txtFor="body" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_underwriter_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_weight="1.4"
+                        app:txtFor="body"
+                        app:txtStyle="softBold"
+                        tools:text="CC - Mandiri Sekuritas\nAK - UBS Sekuritas Indonesia" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vmFinancialCashflow"
+            type="com.bcasekuritas.mybest.app.feature.stockdetail.financial.cashflow.CashflowViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_fcf_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_type_period"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_ffffff_stroke_dfdfdf_8"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/radio_group_fcf"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_type_period_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_annual"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_type_period_down"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:txtFor="body" />
+
+                <ImageView
+                    android:id="@+id/iv_type_period_down"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_chevron_down"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_fcf_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_menu_white"
+                android:background="@drawable/bg_layout_border_10"
+                android:backgroundTint="@color/textSecondaryBluey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_fcf"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:padding="1dp"
+                android:background="@drawable/rounded_ffffff_stroke_dfdfdf_8"
+                app:layout_constraintEnd_toStartOf="@id/iv_fcf_menu"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <RadioButton
+                    android:id="@+id/rb_fcf_dollar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_dollar"
+                    android:drawableTint="@color/color_333333_5e5e5e"
+                    android:button="@null"
+                    android:paddingStart="15dp"
+                    android:background="@drawable/bg_button_radius_left"
+                    android:backgroundTint="@color/color_fof5f8_ffffff"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rb_fcf_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_percent_black"
+                    android:drawableTint="@color/color_333333_5e5e5e"
+                    android:button="@null"
+                    android:paddingStart="10dp"
+                    android:background="@drawable/bg_button_radius_right"
+                    android:backgroundTint="@color/color_fof5f8_ffffff" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fcf_period"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_fcf_filter"
+            app:layout_constraintEnd_toEndOf="@id/guideline_border">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:paddingHorizontal="5dp"
+                android:gravity="center_vertical"
+                android:text=""
+                app:txtFor="caption"
+                app:txtStyle="bold"
+                android:background="@color/bgPrimary"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:text="Cash From Operating Act"
+                app:txtFor="caption"
+                app:txtStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/borderline" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="16dp"
+                android:text="Cash From Investing Act"
+                app:txtFor="caption"
+                app:txtStyle="bold"
+                android:gravity="center_vertical"  />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/borderline" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_title_operating_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:minHeight="30dp"
+                android:layout_marginLeft="16dp"
+                android:text="Cash From Financing Act"
+                app:txtStyle="bold"
+                app:txtFor="caption"
+                android:gravity="center_vertical" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/borderline" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Net Cash Flow"
+                app:txtFor="caption"
+                app:txtStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/borderline" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Capital Expenditure"
+                app:txtFor="caption"
+                app:txtStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/borderline" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Free Cash Flow"
+                app:txtFor="caption"
+                app:txtStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_cash_flow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingEnd="3dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_list_cash_flow"
+            android:scrollbars="none"
+            android:clickable="false"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toEndOf="@id/guideline_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ll_fcf_period"/>
+
+        <include
+            android:id="@+id/ly_no_data"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            layout="@layout/item_list_cash_flow"
+            app:layout_constraintStart_toEndOf="@id/guideline_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ll_fcf_period"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

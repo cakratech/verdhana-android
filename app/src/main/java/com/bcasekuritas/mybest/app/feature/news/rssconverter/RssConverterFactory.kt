@@ -1,0 +1,27 @@
+package com.bcasekuritas.mybest.app.feature.news.rssconverter
+
+import okhttp3.ResponseBody
+import retrofit2.Converter
+import retrofit2.Retrofit
+import java.lang.reflect.Type
+
+class RssConverterFactory
+    private constructor() : Converter.Factory() {
+
+        override fun responseBodyConverter(type: Type?,
+                                           annotations: Array<Annotation>?,
+                                           retrofit: Retrofit?):
+                Converter<ResponseBody, *> = RssResponseBodyConverter()
+
+        companion object {
+
+            /**
+             * Creates an instance
+             *
+             * @return instance
+             */
+            fun create(): RssConverterFactory {
+                return RssConverterFactory()
+            }
+        }
+}

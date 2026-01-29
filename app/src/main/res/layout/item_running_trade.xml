@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="5"
+        android:background="@color/bgWhite"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            tools:text="15:15:59"
+            android:textAlignment="center"
+            app:txtFor="caption"
+            app:txtStyle="softBold"
+            />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            tools:text="PGEOSDSDASDASD"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textAlignment="center"
+            app:txtFor="caption"
+            app:txtStyle="softBold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            tools:text="4,805"
+            android:textAlignment="center"
+            app:txtFor="caption"
+            app:txtStyle="softBold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_change"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            tools:text="252 (+1.90%)"
+            android:textAlignment="center"
+            app:txtFor="caption"
+            app:txtStyle="softBold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_lot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="25"
+            android:textAlignment="center"
+            app:txtFor="caption"
+            app:txtStyle="softBold"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_data_item"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_period"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/bgPrimary"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_revenue"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_cogs"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_gross_profit"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_operating_expenses"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:minHeight="30dp"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_ebitda"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_operating_profit"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_income_before_tax"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text=""/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_net_income"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+</LinearLayout>

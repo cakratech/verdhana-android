@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgWhite"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/iv_stock_right_issues"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_stock_right_issues"
+            app:layout_constraintLeft_toLeftOf="@id/iv_stock_right_issues"
+            app:layout_constraintRight_toRightOf="@id/iv_stock_right_issues"
+            app:layout_constraintTop_toTopOf="@id/iv_stock_right_issues"
+            app:txtColor="white"
+            app:txtFor="caption"
+            app:txtStyle="bold"
+            tools:text="BA"
+            tools:visibility="visible" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_stock_code_right_issues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:layout_marginLeft="12dp"
+            tools:text="BBCA"
+            app:txtStyle="softBold"
+            app:layout_constraintLeft_toRightOf="@id/iv_stock_right_issues"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_stock_name_right_issues"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Bank Central Asia Tbk."
+            app:txtFor="caption"
+            app:txtColor="noChanges"
+            app:txtStyle="softBold"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="40dp"
+            app:layout_constraintRight_toLeftOf="@id/tv_price_right_issues"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_stock_code_right_issues"
+            app:layout_constraintTop_toBottomOf="@id/tv_stock_code_right_issues" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_offer_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Offer Price"
+            app:txtStyle="softBold"
+            app:txtFor="caption"
+            app:layout_constraintBottom_toTopOf="@id/tv_price_right_issues"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_stock_right_issues"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_price_right_issues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            tools:text="800"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:txtFor="body"
+            android:layout_marginTop="4dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_offer_price"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:txtStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

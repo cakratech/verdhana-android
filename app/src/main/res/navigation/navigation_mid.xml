@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_mid">
+
+    <activity
+        android:id="@+id/exception_handler_activity"
+        android:name="com.bcasekuritas.mybest.app.feature.activity.exception.ExceptionHandlerActivity"
+        android:label="activity_exception_handler"
+        tools:layout="@layout/activity_exception_handler"/>
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login"/>
+
+    <fragment
+        android:id="@+id/top_up_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rdn.topup.TopUpFragment"
+        android:label="fragment_top_up"
+        tools:layout="@layout/fragment_top_up"/>
+
+    <fragment
+        android:id="@+id/withdraw_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rdn.withdraw.WithdrawFragment"
+        android:label="fragment_withdraw"
+        tools:layout="@layout/fragment_withdraw"/>
+
+    <fragment
+        android:id="@+id/security_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.security.menusecurity.SecurityFragment"
+        android:label="fragment_security"
+        tools:layout="@layout/fragment_security"/>
+
+    <fragment
+        android:id="@+id/e_statements_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.profile.estaments.EStatementsFragment"
+        android:label="fragment_e_statements"
+        tools:layout="@layout/fragment_e_statements"/>
+
+    <fragment
+        android:id="@+id/notification_settings_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.notificationsettings.NotificationSettingsFragment"
+        android:label="fragment_notification_settings"
+        tools:layout="@layout/fragment_notification_settings"/>
+
+    <fragment
+        android:id="@+id/detail_rdn_history_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rdn.detailhistory.DetailRdnHistoryFragment"
+        android:label="fragment_detail_rdn_history"
+        tools:layout="@layout/fragment_detail_rdn_history"/>
+
+    <fragment
+        android:id="@+id/pin_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.pin.PinFragment"
+        android:label="fragment_pin"
+        tools:layout="@layout/fragment_pin"/>
+
+    <fragment
+        android:id="@+id/add_to_watchlist_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.watchlist.addwatchlist.AddToWatchlistFragment"
+        android:label="fragment_add_to_watchlist"
+        tools:layout="@layout/fragment_add_to_watchlist"/>
+
+    <fragment
+        android:id="@+id/select_watchlist_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.watchlist.selectwatchlist.AddToWatchlistFragment"
+        android:label="fragment_select_watchlist_watchlist"
+        tools:layout="@layout/fragment_select_watchlist"/>
+
+    <fragment
+        android:id="@+id/manage_watchlist_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.watchlist.ManageWatchlistFragment"
+        android:label="fragment_manage_watchlist"
+        tools:layout="@layout/fragment_manage_watchlist"/>
+
+    <fragment
+        android:id="@+id/stock_detail_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.stockdetail.StockDetailFragment"
+        android:label="fragment_stock_detail"
+        tools:layout="@layout/fragment_stock_detail"/>
+
+    <fragment
+        android:id="@+id/price_alert_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.pricealert.PriceAlertFragment"
+        android:label="fragment_price_alert"
+        tools:layout="@layout/fragment_price_alert"/>
+
+    <fragment
+        android:id="@+id/create_edit_price_alert_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.pricealert.createedit.CreateEditPriceAlertFragment"
+        android:label="fragment_create_edit_price_alert"
+        tools:layout="@layout/fragment_create_edit_price_alert"/>
+
+    <fragment
+        android:id="@+id/fast_order_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.fastorder.FastOrderFragment"
+        android:label="fragment_fast_order"
+        tools:layout="@layout/fragment_fast_order"/>
+
+    <fragment
+        android:id="@+id/search_fast_order_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.fastorder.search.SearchFastOrderFragment"
+        android:label="fragment_search_fast_order"
+        tools:layout="@layout/fragment_search_stock"/>
+
+    <fragment
+        android:id="@+id/order_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order"/>
+
+    <fragment
+        android:id="@+id/order_buy_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.order.tabbuy.OrderBuyFragment"
+        android:label="fragment_order_buy"
+        tools:layout="@layout/fragment_order_buy"/>
+
+    <fragment
+        android:id="@+id/order_sell_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.order.tabsell.OrderSellFragment"
+        android:label="fragment_order_sell"
+        tools:layout="@layout/fragment_order_sell"/>
+
+    <fragment
+        android:id="@+id/special_notes_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.stockdetail.specialnotes.SpecialNotesFragment"
+        android:label="fragment_special_notes"
+        tools:layout="@layout/fragment_special_notes"/>
+    
+    <fragment
+        android:id="@+id/order_detail_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.order.orderdetail.OrderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail"/>
+
+    <fragment
+        android:id="@+id/select_account_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.selectaccount.SelectAccountFragment"
+        android:label="fragment_select_account"
+        tools:layout="@layout/fragment_select_account"/>
+  
+  <fragment
+        android:id="@+id/portfolio_detail_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.portfolio.portfoliodetail.PortfolioDetailFragment"
+        android:label="fragment_portfolio_detail"
+        tools:layout="@layout/fragment_portfolio_detail"/>
+
+  <fragment
+        android:id="@+id/search_stock_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.searchstock.SearchStockFragment"
+        android:label="fragment_search_stock"
+        tools:layout="@layout/fragment_search_stock"/>
+
+    <fragment
+        android:id="@+id/account_disabled_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.account.AccountDisabledFragment"
+        android:label="account_disabled_fragment"
+        tools:layout="@layout/fragment_account_disabled"/>
+
+    <fragment
+        android:id="@+id/stop_loss_take_profit_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.portfolio.stoplosstakeprofit.StopLossTakeProfitFragment"
+        android:label="StopLossTakeProfitViewModel"/>
+
+    <fragment
+        android:id="@+id/setup_fast_order_volume_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.fastorder.setupvolume.SetupVolumeFragment"
+        android:label="setup_fast_order_volume_fragment"/>
+
+    <fragment
+        android:id="@+id/condition_advanced_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.order.conditionadvanced.ConditionAdvancedFragment"
+        android:label="fragment_condition_advanced"
+        tools:layout="@layout/fragment_condition_advanced"/>
+
+    <fragment
+        android:id="@+id/right_issue_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rightissue.RightIssueFragment"
+        android:label="fragment_right_issue"/>
+
+    <fragment
+        android:id="@+id/exercise_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rightissue.exercise.ExerciseFragment"
+        android:label="fragment_exercise"/>
+
+    <fragment
+        android:id="@+id/line_setting_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.linesetting.LineSettingFragment"
+        android:label="fragment_line_setting"/>
+
+    <fragment
+        android:id="@+id/exercise_order_list_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rightissue.orderlist.ExerciseOrderListFragment"
+        android:label="fragment_exercise_order_list"/>
+
+    <fragment
+        android:id="@+id/exercise_detail_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.rightissue.detail.ExerciseDetailFragment"
+        android:label="fragment_exercise_detail"/>
+
+    <fragment
+        android:id="@+id/change_password_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.security.changepassword.ChangePasswordFragment"
+        android:label="fragment_change_password"/>
+  
+    <fragment
+        android:id="@+id/realized_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.portfolio.realized.RealizedFragment"
+        android:label="fragment_realized"/>
+
+    <fragment
+        android:id="@+id/notification_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.notification.NotificationFragment"
+        android:label="fragment_notification"/>
+
+    <fragment
+        android:id="@+id/disclaimer_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.disclaimer.DisclaimerFragment"
+        android:label="fragment_disclaimer"/>
+
+    <fragment
+        android:id="@+id/eipo_order_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.e_ipo.order.OrderEIPOFragment"
+        android:label="fragment_eipo_order"/>
+
+    <fragment
+        android:id="@+id/eipo_detail_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.e_ipo.eipodetail.EIPODetailFragment"
+        android:label="fragment_eipo_detail"/>
+
+    <fragment
+        android:id="@+id/eipo_order_list_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.e_ipo.orderlist.EipoOrderListFragment"
+        android:label="fragment_eipo_order_list"/>
+
+    <fragment
+        android:id="@+id/device_otp_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.managedevice.deviceauthentication.DeviceAuthenticationFragment"
+        android:label="fragment_device_otp"/>
+
+    <fragment
+        android:id="@+id/manage_device_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.managedevice.ManageDeviceFragment"
+        android:label="fragment_manage_device"/>
+
+</navigation>

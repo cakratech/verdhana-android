@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#FFF</color>
+    <color name="colorBackgroundPrimary">#EFF5FF</color>
+    <color name="colorAccent">#2F5CE5</color>
+    <color name="testColor">#FFFFFF</color>
+    <color name="textColor">#000000</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_color">#E5E5E5</color>
+    <color name="lighterTeal">#2DC6DF</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="greyish">#DDEAEE</color>
+    <color name="gold">#F5B941</color>
+    <color name="blue_transparent">#CC2DC6DF</color>
+    <color name="dark_blue">#073554</color>
+    <color name="white_80">#eaeaea</color>
+    <color name="white_five">#e7e4e4</color>
+    <color name="blew">#2690CB</color>
+    <color name="blue_mid">#2DC9E2</color>
+    <color name="lighter_red">#FF647C</color>
+    <color name="marigold_dark">#ccc200</color>
+    <color name="dark_grey">#6B6B6B</color>
+    <color name="flat_blue">#355eab</color>
+    <color name="blue_pale">#4e8cbf</color>
+    <color name="darkGrey">#666666</color>
+    <color name="black_transparent">#cc2c2c2c</color>
+    <color name="marigold">#ffc200</color>
+    <color name="sky">#81d4fa</color>
+    <color name="orange_stroke_info">#81591D</color>
+    <color name="blue_stroke_info">#0154F9</color>
+    <color name="blue_info">#EAEFFE</color>
+    <color name="orange">#FFB020</color>
+    <color name="cyan">#25CBD6</color>
+    <color name="dark_orange">#ED6F39</color>
+    <color name="pink">#ED55C2</color>
+    <color name="light_blue">#EBF0FE</color>
+    <color name="blue">#2F5CE5</color>
+    <color name="light_green">#EEF8F4</color>
+    <color name="green">#4AAA85</color>
+    <color name="light_yellow">#FFF7E9</color>
+    <color name="yellow">#E59E1D</color>
+    <color name="light_red">#FAECEC</color>
+    <color name="red">#BC3C3C</color>
+    <color name="transparent">#00BC3C3C</color>
+    <color name="redWarning">#D14343</color>
+
+
+    <color name="coachMark">#50333333</color>
+    <color name="disabledGreen">#cbe7d7</color>
+    <color name="disabledRed">#FED9D9</color>
+
+    // Shadow Gradient
+    <color name="startColor">#CACACA</color>
+    <color name="centerColor">#E4E4E4</color>
+
+    <color name="textMain">#333333</color>
+    <color name="textHeadingOne">#073554</color>
+    <color name="textHeadingTwo">#1A203D</color>
+    <color name="textHeadingThree">#181818</color>
+    <color name="textHeadingFour">#333333</color>
+    <color name="textCaptionOne">#333333</color>
+    <color name="textCaptionTwo">#464958</color>
+    <color name="textCaptionThree">#5F6377</color>
+    <color name="textCaptionFour">#868EA4</color>
+    <color name="textSub">#60666C</color>
+    <color name="textDescription">#4F4F4F</color>
+    <color name="divider">#F5F5F5</color>
+    <color name="textSecondaryGrey">#5e5e5e</color>
+
+    <color name="textRed">#EB4747</color>
+    <color name="textPeach">#FF9090</color>
+    <color name="textOrange">#FF952C</color>
+    <color name="textGreen3">#6FCF97</color>
+    <color name="textGreen2">#27AE60</color>
+    <color name="textGreen">#D1E16F</color>
+    <color name="textPink">#FF4D80</color>
+    <color name="textBlue">#2690CB</color>
+    <color name="textGray">#999</color>
+    <color name="textBlueChat">#0E87CC</color>
+    <color name="textYellow">#FFCF3E</color>
+    <color name="textYellowConsul">#F2C94C</color>
+    <color name="textPurple">#BB6BD9</color>
+    <color name="textHintBlue">#B4CCD7</color>
+    <color name="textMidBlack">#212525</color>
+    <color name="textMidGray">#BCC1CD</color>
+    <color name="textNavActive">@color/textSecondaryBluey</color>
+    <color name="textNavInactive">@color/textSecondary</color>
+<!--    <color name="textNavActive">#1A6A8E</color>-->
+<!--    <color name="textNavInactive">#4D1A6A8E</color>-->
+    <color name="textNumberSelected">#4D0B3E68</color>
+    <color name="buttonPrimary">#015FCD</color>
+    <color name="buttonSecondary">#2667BBDF</color>
+    <color name="buttonThird">#1567BBDF</color>
+    <color name="buttonDisable">#E0E0E0</color>
+    <color name="faded_blue">#AFB6C9</color>
+    <color name="faded_blue_darker">#868EA4</color>
+    <color name="stickIndicatorActive">#4DD1E16F</color>
+    <color name="stickIndicatorInactive">#E0E0E0</color>
+
+    // Brand
+    <color name="brandPrimaryBCABlue">#015FCD</color>
+    <color name="brandPrimaryBCAGreen">#00AEB9</color>
+    <color name="brandPrimaryNightBlue">#030E37</color>
+    <color name="brandPrimaryMidnight">#031A6B</color>
+    <color name="brandSecondaryBlue">#0154FA</color>
+    <color name="brandSecondaryLight">#EBEEEE</color>
+    <color name="brandAccent">#FFBC57</color>
+    <color name="brandWarning">#E14343</color>
+    <color name="brandSuccess">#27AE60</color>
+    <color name="brandOrange">#FF7A00</color>
+    <color name="alwaysBlue">#015FCD</color>
+
+    // Text
+    <color name="textPrimary">#333333</color>
+    <color name="textSecondaryBlack">#4F5673</color>
+    <color name="textSecondary">#9A9FAF</color>
+    <color name="textTertiary">#E6E7EB</color>
+    <color name="textWhite">#FFFFFF</color>
+    <color name="textBCABlue">#015FCD</color>
+    <color name="textTeal">#00ABBC</color>
+    <color name="textChart">#FFFFFF</color>
+    <color name="textSecondaryBluey">#0154FA</color>
+    <color name="txtButtonPrimary">#FFFFFF</color>
+    <color name="txtWhiteBlack">#FFFFFF</color>
+    <color name="txtWhiteBlue">#FFFFFF</color>
+    <color name="txtBlackWhite">#000000</color>
+    <color name="textUp">#27AE60</color>
+    <color name="textDown">#E14343</color>
+    <color name="textUpHeader">#00FFA6</color>
+    <color name="textDownHeader">#FFA3A3</color>
+    <color name="noChanges">#9a9a9a</color>
+    <color name="textChip">#000000</color>
+    <color name="blueCalendar">#015FCD</color>
+    <color name="btnCalendarCancel">#4F5673</color>
+
+    // Dashboard
+    <color name="textWhiteDashboard">#FFFFFF</color>
+    <color name="textPrimaryDashboard">#333333</color>
+    <color name="textTertiaryDashboard">#E6E7EB</color>
+    <color name="selectedDotDashboard">#FFFFFF</color>
+    <color name="buttonDashboard">#FFFFFF</color>
+    <color name="unselectedDotDashboard">#848281</color>
+
+    // Background
+    <color name="bgPrimary">#F0F5F8</color>
+    <color name="bgSecondary">#F8FAFB</color>
+    <color name="bgWhite">#FFFFFF</color>
+    <color name="bgBottomSheet">#FFFFFF</color>
+    <color name="bgBCABlue">#015FCD</color>
+    <color name="bgForm">#FFFFFF</color>
+    <color name="bgDisabled">#F2F2F2</color>
+    <color name="bgAbout">#002856</color>
+    <color name="unselectedDot">#666565</color>
+    <color name="bgYellow">#FEE5A4</color>
+    <color name="bgSplash">#FFFFFF</color>
+    <color name="bgChart">#02B9CB</color>
+    <color name="bgGrey">#9A9FAF</color>
+    <color name="bgLightGrey">#F0F5F8</color>
+    <color name="bgBlack">#000000</color>
+    <color name="bgIcProfile">#FFFFFF</color>
+    <color name="bgBtnDisabled">#9A9A9A</color>
+    <color name="bgInfo">#E2ECFF</color>
+    <color name="bgYellowInfo">#FFE6A5</color>
+    <color name="bgBlueTrans">#015FCD</color>
+    <color name="bgWhiteTransparent">#FFFFFF</color>
+
+    // Border
+    <color name="borderGeneral">#E6E7EB</color>
+    <color name="borderSecondary">#E6E7EB</color>
+    <color name="borderWarning">#E14343</color>
+    <color name="borderActive">#0154FA</color>
+    <color name="borderline">#DAE8F6</color>
+    <color name="borderWhite">#FFFFFF</color>
+
+    // Actions
+    <color name="action">#00AEB9</color>
+    <color name="textLightGreen">#00FFA6</color>
+    <color name="action_cyan">#02B9CB</color>
+    <color name="cyanAnalysis">#02B9CB</color>
+    <color name="alwaysCyan">#00AEB9</color>
+
+    // Grafik
+    <color name="chartBlue">#568EFC</color>
+    <color name="chartGreen">#25CBD6</color>
+    <color name="chartYellow">#FFB020</color>
+    <color name="chartPurple">#B72ED6</color>
+    <color name="chartOrange">#FF9800</color>
+    <color name="chartGreenTwo">#238727</color>
+    <color name="chartRed">#CC1D10</color>
+    <color name="chartBlueTwo">#1232E6</color>
+    <color name="startChartColor">#10C00D</color>
+    <color name="endChartColor">#FFFFFF</color>
+
+    // Calendar Event
+    <color name="calBonus">#E14343</color>
+    <color name="calDividen">#02B9CB</color>
+    <color name="calEIPO">#6A44D9</color>
+    <color name="calPubExp">#FF9900</color>
+    <color name="calReverseSplit">#689D11</color>
+    <color name="calRightIssue">#192F86</color>
+    <color name="calRUPS">#ED6CB1</color>
+    <color name="calStockSplit">#0154FA</color>
+    <color name="calWarrant">#27AE60</color>
+    <color name="calFinancialReport">#5487D4</color>
+<!--    <color name="chartOrange">#FF9800</color>-->
+<!--    <color name="chartGreenTwo">#238727</color>-->
+<!--    <color name="chartRed">#CC1D10</color>-->
+<!--    <color name="chartBlueTwo">#1232E6</color>-->
+    <color name="blueIndex">#139FCB</color>
+    <color name="yellowIndex">#FF9900</color>
+    <color name="orangeIndex">#F25532</color>
+    <color name="purpleIndex">#6A44D9</color>
+    <color name="pinkIndex">#ED6CB1</color>
+
+    // Tab
+    <color name="tabIndicator">#0154FA</color>
+
+    // Shadow Gradient
+    <color name="shadow10">#10CCCCCC</color>
+    <color name="shadow20">#20CCCCCC</color>
+    <color name="shadow30">#30CCCCCC</color>
+    <color name="shadow40">#40CCCCCC</color>
+    <color name="shadow50">#50CCCCCC</color>
+
+    // Switch
+    <color name="swTrack">#00AEB9</color>
+
+    // color broker code
+    <color name="brokerPurple">#5458BC</color>
+    <color name="brokerCyan">#00A4A7</color>
+    <color name="brokerRed">#F03838</color>
+
+    // icon
+    <color name="greyWhite">#9A9A9A</color>
+
+    // chip
+    <color name="chipBlue">#0154FA</color>
+</resources>

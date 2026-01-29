@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_board"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_last_price"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        app:txtFor="caption"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_change"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_change_pct"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        app:txtFor="caption"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_value"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_volume"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_freq"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_value_buy"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_value_sell"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_net_value"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:txtFor="caption"
+        android:layout_marginLeft="10dp"
+        android:text="-" />
+
+</LinearLayout>

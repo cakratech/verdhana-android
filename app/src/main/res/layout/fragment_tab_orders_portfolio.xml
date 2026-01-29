@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmTabOrders"
+            type="com.bcasekuritas.mybest.app.feature.portfolio.taborders.OrdersTabPortfolioViewModel" />
+        <variable
+            name="advanceItem"
+            type="String" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bgWhite">
+
+            <!-- layout tab orders -->
+            <LinearLayout
+                android:id="@+id/ly_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <HorizontalScrollView
+                        android:id="@+id/scv_chip_group_watchlist"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:scrollbars="none"
+                        app:layout_constraintRight_toLeftOf="@id/btn_filter"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chip_orders"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip1"
+                                style="@style/Widget.App.Chip.White.Blue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:textSize="14dp"
+                                android:text="Active Orders"
+                                app:chipMinTouchTargetSize="24dp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_trade_list"
+                                style="@style/Widget.App.Chip.White.Blue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trade List"
+                                android:textSize="14dp"
+                                app:chipMinTouchTargetSize="24dp" />
+
+                        </com.google.android.material.chip.ChipGroup>
+
+
+                    </HorizontalScrollView>
+
+                    <!-- Chips Tabs -->
+
+                    <ImageView
+                        android:id="@+id/btn_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_ffffff_stroke_dfdfdf_12"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_filter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Chips Filter -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.App.Chip.Input.Blue.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last 1 Week"
+                        android:textSize="14dp"
+                        app:checkedIconTint="@color/white"
+                        app:chipMinTouchTargetSize="24dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <!-- layout active orders -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_active_orders"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_tab">
+
+                <!-- card advance order list -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_stop_loss_take_profit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    tools:visibility="visible"
+                    android:background="@drawable/rounded_f0f5f8_8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_watchlist_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_market_closed"
+                        app:layout_constraintBottom_toBottomOf="@id/ly_loss"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ly_loss" />
+
+                    <ImageView
+                        android:id="@+id/iv_row"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/ly_loss"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/iv_watchlist_home"
+                        app:layout_constraintRight_toLeftOf="@id/iv_row"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Advanced Order"
+                            app:txtFor="body"
+                            app:txtStyle="bold" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Manage your owned stocks with active conditions"
+                            app:txtFor="caption" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_total_adv_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:visibility="gone"
+                            app:txtStyle="bold"
+                            app:txtColor="green"
+                            app:txtFor="caption" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- row -->
+                <LinearLayout
+                    android:id="@+id/ly_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bgLightGrey"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_stop_loss_take_profit"
+                    android:weightSum="4">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Type &amp; Code"
+                        android:textAlignment="center"
+                        app:txtFor="caption"
+                        app:txtStyle="bold"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Lot(s)"
+                        android:textAlignment="center"
+                        app:txtFor="caption"
+                        app:txtStyle="bold" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Price"
+                        android:textAlignment="center"
+                        app:txtFor="caption"
+                        app:txtStyle="bold"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Amount"
+                        android:textAlignment="center"
+                        app:txtFor="caption"
+                        app:txtStyle="bold" />
+
+                </LinearLayout>
+
+                <com.aitsuki.swipe.SwipeMenuRecyclerView
+                    android:id="@+id/rcv_active_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    tools:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/ly_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:listitem="@layout/item_tab_active_order_swipe" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_trade_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    tools:visibility="gone"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/ly_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:listitem="@layout/item_trade_list" />
+
+                <!-- layout filters not found -->
+                <LinearLayout
+                    android:id="@+id/ly_filter_not_found"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ly_title">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_filter_not_found"
+                        />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="No orders found"
+                        app:txtFor="h3"
+                        app:txtStyle="softBold"/>
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_discover_stocks_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Discover Stocks"
+                        android:textAlignment="center"
+                        app:txtFor="body"
+                        app:txtStyle="bold"
+                        app:txtColor="blue"
+                        />
+
+                </LinearLayout>
+
+                <!-- layout no active orders/ empty orders -->
+                <LinearLayout
+                    android:id="@+id/ly_portfolio_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ly_title"
+                    tools:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_filter_not_found" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_no_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="There is no active order"
+                        android:textAlignment="center"
+                        app:txtFor="h3"
+                        app:txtStyle="softBold"
+                        />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_desc_no_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Choose a stock to make order, automatic order, or fast order"
+                        android:textAlignment="center"
+                        app:txtFor="body"
+                        />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_discover_stocks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Discover Stocks"
+                        android:textAlignment="center"
+                        app:txtFor="body"
+                        app:txtStyle="bold"
+                        app:txtColor="blue"
+                        />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>

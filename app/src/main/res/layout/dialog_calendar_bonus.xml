@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="h4"
+            app:txtStyle="bold"
+            android:text="Bonus BBA454AS"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/btn_close"
+            app:layout_constraintBottom_toBottomOf="@id/btn_close"
+            app:layout_constraintTop_toTopOf="@id/btn_close"/>
+
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:btnStyle="transBlack"
+            app:iconGravity="end"
+            app:icon="@drawable/ic_close"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Ratio"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/tv_ratio_val"
+            app:layout_constraintTop_toBottomOf="@id/btn_close"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ratio_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="50 : 23"
+            app:layout_constraintStart_toEndOf="@id/tv_ratio"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/tv_ratio"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_cumulative_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Cum Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_factor"
+            app:layout_constraintEnd_toStartOf="@id/tv_cumulative_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_cumulative_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_cumulative_date"
+            app:layout_constraintTop_toTopOf="@id/tv_cumulative_date"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_cumulative_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ex_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Ex Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_cumulative_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_ex_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ex_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@+id/tv_ex_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_ex_date"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_ex_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_recording_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Recording Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_ex_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_recording_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_recording_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_recording_date"
+            app:layout_constraintTop_toTopOf="@id/tv_recording_date"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_recording_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_factor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Factor"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_ratio"
+            app:layout_constraintEnd_toStartOf="@id/tv_factor_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_factor_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="0.90"
+            app:layout_constraintStart_toEndOf="@id/tv_factor"
+            app:layout_constraintTop_toTopOf="@id/tv_factor"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_factor"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_paydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Payment Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_recording_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_paydate_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_paydate_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            tools:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_paydate"
+            app:layout_constraintTop_toTopOf="@id/tv_paydate"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_paydate"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_view_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="View Stock"
+            app:btnStyle="primary"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/tv_recording_date"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

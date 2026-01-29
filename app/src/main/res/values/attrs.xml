@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="EditTextDrawable">
+        <attr name="et_drawableLeftCompat" format="reference" />
+        <attr name="et_drawableRightCompat" format="reference" />
+        <attr name="et_drawableTopCompat" format="reference" />
+        <attr name="et_drawableBottomCompat" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewDrawable">
+        <attr name="tv_drawableLeftCompat" format="reference" />
+        <attr name="tv_drawableRightCompat" format="reference" />
+        <attr name="tv_drawableTopCompat" format="reference" />
+        <attr name="tv_drawableBottomCompat" format="reference" />
+        <attr name="tv_drawableBackground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ButtonDrawable">
+        <attr name="btn_drawableLeftCompat" format="reference" />
+        <attr name="btn_drawableRightCompat" format="reference" />
+        <attr name="btn_drawableTopCompat" format="reference" />
+        <attr name="btn_drawableBottomCompat" format="reference" />
+        <attr name="btn_drawableBackground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DividerView">
+        <attr name="color" format="color" />
+        <attr name="dashLength" format="dimension" />
+        <attr name="dashGap" format="dimension" />
+        <attr name="dashThickness" format="dimension" />
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MathView">
+        <attr name="text" format="string" />
+        <attr name="engine" format="enum">
+            <enum name="KaTeX" value="0" />
+            <enum name="MathJax" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditTextWithTitle">
+        <attr name="title" format="string" />
+        <attr name="hint" format="string" />
+        <attr name="edittextfor" format="string" />
+        <attr name="isNoteIcon" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomNumberPicker">
+        <attr name="npMinVal" format="integer" />
+        <attr name="npMaxVal" format="integer" />
+        <attr name="npCurrVal" format="integer" />
+        <attr name="npTitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomSnackBar">
+        <attr name="snackbarFor" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="NotificationStatus">
+        <attr name="statusStyle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="txtFor" format="string" />
+        <attr name="txtStyle" format="string" />
+        <attr name="txtColor" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomButton">
+        <attr name="btnStyle" format="string" />
+        <attr name="icon" format="reference" />
+        <attr name="buttonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomQtyAdjuster">
+        <attr name="isFraction" format="boolean" />
+        <attr name="adjusterFor" format="string" />
+        <attr name="sizeWidth" format="string" />
+    </declare-styleable>
+</resources>

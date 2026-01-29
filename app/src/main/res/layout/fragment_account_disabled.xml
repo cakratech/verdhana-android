@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vmAccountDisabled"
+            type="com.bcasekuritas.mybest.app.feature.pin.accountdisable.AccountDisableViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/bgWhite">
+
+       <ImageView
+           android:id="@+id/btn_close"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_marginTop="16dp"
+           android:layout_marginEnd="16dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:src="@drawable/ic_close_black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_open_account">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/accountdisabled"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Your account has been disabled"
+                app:txtFor="big"
+                app:txtStyle="bold"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:text="To protect your data, we have disabled your account due to multiple failed PIN attempts."
+                app:txtFor="body"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:text="Please contact HaloBCA 021-2358 7222 \n between 08:30 - 17:00"
+                app:txtFor="body"/>
+        </LinearLayout>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_open_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Open Account Management"
+            android:layout_margin="20dp"
+            app:btnStyle="primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

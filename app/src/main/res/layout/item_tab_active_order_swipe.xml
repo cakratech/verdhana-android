@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.bcasekuritas.mybest.widget.swipebutton.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoClose="true"
+        app:preview="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/btn_amend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#02B9CB"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="AMEND"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btn_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/textDown"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="WITHDRAW"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:orientation="vertical">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_buy_sell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    app:txtFor="caption"
+                    app:txtStyle="bold"
+                    tools:text="BUY" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_stock_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        app:txtFor="body"
+                        app:txtStyle="bold"
+                        tools:text="BBCA" />
+
+                    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                        android:id="@+id/tv_notation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_layout_border_5_no_padding"
+                        android:backgroundTint="@color/textYellow"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="1dp"
+                        tools:text="EX"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        app:layout_constraintStart_toEndOf="@id/tv_stock_code"
+                        app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+                        app:txtFor="caption"
+                        app:txtStyle="softBold" />
+
+                </LinearLayout>
+
+
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    app:txtColor="black"
+                    android:layout_marginTop="2dp"
+                    app:txtFor="caption"
+                    tools:text="Until 30 Jun 2023" />
+
+            </LinearLayout>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_qty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                app:txtColor="grey"
+                app:txtFor="body"
+                app:txtStyle="softBold"
+                tools:text="1000 LOT" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                app:txtColor="grey"
+                app:txtFor="body"
+                app:txtStyle="softBold"
+                tools:text="1.725" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:orientation="vertical">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="true"
+                    app:txtFor="caption"
+                    app:txtStyle="bold"
+                    tools:text="matched" />
+
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="textEnd"
+                    android:layout_marginTop="2dp"
+                    app:txtFor="body"
+                    app:txtStyle="softBold"
+                    tools:text="Rp1.850.000.000" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </com.bcasekuritas.mybest.widget.swipebutton.SwipeLayout>
+
+</layout>

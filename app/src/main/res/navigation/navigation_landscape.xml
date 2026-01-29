@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_landscape">
+
+    <activity
+        android:id="@+id/exception_handler_activity"
+        android:name="com.bcasekuritas.mybest.app.feature.activity.exception.ExceptionHandlerActivity"
+        android:label="activity_exception_handler"
+        tools:layout="@layout/activity_exception_handler"/>
+
+    <fragment
+        android:id="@+id/trading_view_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.tradingview.TradingViewFragment"
+        android:label="TradingViewViewModel"/>
+
+</navigation>

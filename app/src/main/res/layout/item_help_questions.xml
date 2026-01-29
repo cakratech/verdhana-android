@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ly_categories_help"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/ly_faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_title_faq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:txtStyle="softBold"
+            tools:text="How to change my bank account info?"
+            app:txtFor="body"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_expandable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_black"/>
+
+    </LinearLayout>
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expand_faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_duration="500"
+        app:el_expanded="false">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_lorem"
+                app:txtFor="body" />
+
+<!--            <com.bcasekuritas.mybest.widget.textview.CustomTextView-->
+<!--                android:id="@+id/tv_asking_helpful"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:text="Is this answer helpful?"-->
+<!--                app:txtFor="body"-->
+<!--                app:txtStyle="softBold"-->
+<!--                android:layout_below="@id/tv_answer" />-->
+
+<!--            <com.bcasekuritas.mybest.widget.textview.CustomTextView-->
+<!--                android:id="@+id/tv_helpful_yes"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="YES"-->
+<!--                android:drawableStart="@drawable/ic_thumbs_up"-->
+<!--                android:drawablePadding="8dp"-->
+<!--                app:txtFor="body"-->
+<!--                android:layout_below="@id/tv_asking_helpful" />-->
+
+<!--            <com.bcasekuritas.mybest.widget.textview.CustomTextView-->
+<!--                android:id="@+id/tv_helpful_no"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:text="NO"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:drawableStart="@drawable/ic_thumbs_down"-->
+<!--                android:drawablePadding="8dp"-->
+<!--                app:txtFor="body"-->
+<!--                android:layout_alignTop="@id/tv_helpful_yes"-->
+<!--                android:layout_toRightOf="@id/tv_helpful_yes"/>-->
+        </RelativeLayout>
+
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+</LinearLayout>

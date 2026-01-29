@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <!-- tolbar -->
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif"
+                android:text="Change Condition"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <!-- box stock info -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_user_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_layout_border_10_no_padding"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="123456 - Jonathan Doe"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_bot_row"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#BDBDBD"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_id" />
+
+            <!-- box stock info -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_stock_info"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1">
+
+                <ImageView
+                    android:id="@+id/iv_change_condition"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="#e0e0e0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_stock_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="sans-serif"
+                    android:text="BBCA"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_change_condition"
+                    app:layout_constraintTop_toTopOf="@id/iv_change_condition" />
+
+                <TextView
+                    android:id="@+id/tv_watchlist_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Bank Central Asia Tbk."
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stock_code" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_bot_row"
+                    app:layout_constraintLeft_toRightOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="sans-serif"
+                    android:text="9,100.56"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_change_condition" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="sans-serif"
+                    android:text="+37.45(+0.56%)"
+                    android:textColor="@color/textGreen2"
+                    android:textSize="12sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- box stock info -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_take_profit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_layout_border_10_no_padding"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_user_id">
+
+            <TextView
+                android:id="@+id/tv_owned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Owned Lot"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif"
+                android:text="10 Lot"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/guideline1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5013193" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#BDBDBD"
+                app:layout_constraintTop_toBottomOf="@id/tv_owned" />
+
+            <CheckBox
+                android:id="@+id/checkbox_take_profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.App.CheckBox"
+                android:layout_marginLeft="12dp"
+                android:text="Take Profit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+            <TextView
+                android:id="@+id/tv_compare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Compare"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox_take_profit" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.43" />
+
+            <LinearLayout
+                android:id="@+id/ly_compare_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_layout_border_10_no_padding"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintLeft_toRightOf="@id/guideline3"
+                app:layout_constraintBottom_toBottomOf="@id/tv_compare"
+                app:layout_constraintTop_toTopOf="@id/tv_compare">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Last Price"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bot_row"
+                    app:layout_constraintLeft_toRightOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_greater_than"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_greater_than"
+                app:layout_constraintLeft_toRightOf="@id/ly_compare_to"
+                app:layout_constraintRight_toLeftOf="@id/tv_compare_price"
+                app:layout_constraintTop_toTopOf="@id/ly_compare_to" />
+
+            <LinearLayout
+                android:id="@+id/tv_compare_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_layout_border_10_no_padding"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_compare"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_compare">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="9.100"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_sell_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Sell Price"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_compare" />
+
+            <ImageView
+                android:id="@+id/iv_plus_sell_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sell_price"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_sell_price" />
+
+            <TextView
+                android:id="@+id/tv_price_sell_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_marginHorizontal="10dp"
+                android:text="9100"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_minus_sell_price"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_sell_price"
+                app:layout_constraintRight_toLeftOf="@id/iv_plus_sell_price"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_sell_price" />
+
+            <ImageView
+                android:id="@+id/iv_minus_sell_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_minus"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_sell_price"
+                app:layout_constraintRight_toLeftOf="@id/tv_price_sell_price"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_sell_price" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <TextView
+                android:id="@+id/tv_sell_order_lot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Sell Order Lot"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sell_price" />
+
+            <ImageView
+                android:id="@+id/iv_plus_order_lot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sell_order_lot"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_sell_order_lot" />
+
+            <TextView
+                android:id="@+id/tv_lot_order_lot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_marginHorizontal="10dp"
+                android:text="1"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_minus_order_lot"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_order_lot"
+                app:layout_constraintRight_toLeftOf="@id/iv_plus_order_lot"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_order_lot" />
+
+            <ImageView
+                android:id="@+id/iv_minus_order_lot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_minus"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_order_lot"
+                app:layout_constraintRight_toLeftOf="@id/tv_price_sell_price"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_order_lot" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="If stock price hit Rp9.125, Sell order will be sent to take an approx. Rp20.000 (+5%) profit."
+                android:textSize="11sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sell_order_lot" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#BDBDBD"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="Stop Loss"
+                style="@style/Widget.App.CheckBox"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+            <TextView
+                android:id="@+id/tv_compare_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Compare"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox_stop_loss" />
+
+            <LinearLayout
+                android:id="@+id/tv_compare_price_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_layout_border_10_no_padding"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_compare_stop_loss"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_compare_stop_loss">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="9.100"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_compare_to_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_layout_border_10_no_padding"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintLeft_toRightOf="@id/guideline3"
+                app:layout_constraintBottom_toBottomOf="@id/tv_compare_stop_loss"
+                app:layout_constraintTop_toTopOf="@id/tv_compare_stop_loss">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Last Price"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bot_row"
+                    app:layout_constraintLeft_toRightOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_greater_than_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_greater_than"
+                app:layout_constraintLeft_toRightOf="@id/ly_compare_to_stop_loss"
+                app:layout_constraintRight_toLeftOf="@id/tv_compare_price_stop_loss"
+                app:layout_constraintTop_toTopOf="@id/ly_compare_to_stop_loss" />
+
+            <TextView
+                android:id="@+id/tv_sell_price_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Sell Price"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_compare_stop_loss" />
+
+            <ImageView
+                android:id="@+id/iv_plus_sell_price_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sell_price_stop_loss"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_sell_price_stop_loss" />
+
+            <TextView
+                android:id="@+id/tv_price_sell_price_stop_loss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_marginHorizontal="10dp"
+                android:text="9100"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_minus_sell_price_stop_loss"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_sell_price_stop_loss"
+                app:layout_constraintRight_toLeftOf="@id/iv_plus_sell_price_stop_loss"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_sell_price_stop_loss" />
+
+            <ImageView
+                android:id="@+id/iv_minus_sell_price_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_minus"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_sell_price_stop_loss"
+                app:layout_constraintRight_toLeftOf="@id/tv_price_sell_price_stop_loss"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_sell_price_stop_loss" />
+
+            <TextView
+                android:id="@+id/tv_sell_order_lot_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Sell Order Lot"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sell_price_stop_loss" />
+
+            <ImageView
+                android:id="@+id/iv_plus_order_lot_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sell_order_lot_stop_loss"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_sell_order_lot_stop_loss" />
+
+            <TextView
+                android:id="@+id/tv_lot_order_lot_stop_loss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_marginHorizontal="10dp"
+                android:text="1"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_minus_order_lot_stop_loss"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_order_lot_stop_loss"
+                app:layout_constraintRight_toLeftOf="@id/iv_plus_order_lot_stop_loss"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_order_lot_stop_loss" />
+
+            <ImageView
+                android:id="@+id/iv_minus_order_lot_stop_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_minus"
+                app:layout_constraintBottom_toBottomOf="@id/iv_plus_order_lot_stop_loss"
+                app:layout_constraintRight_toLeftOf="@id/tv_price_sell_price_stop_loss"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@id/iv_plus_order_lot_stop_loss" />
+
+            <TextView
+                android:id="@+id/tv_info_stop_loss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="If stock price hit Rp9.125, Sell order will be sent to take an approx. Rp20.000 (+5%) profit."
+                android:textSize="11sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sell_order_lot_stop_loss" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@null"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"
+            android:text="Save"
+            android:fontFamily="sans-serif"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/bg_015fcd_8"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

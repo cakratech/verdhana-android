@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="40dp"
+    android:orientation="horizontal">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_code"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="-"
+        app:txtFor="caption"
+        app:txtStyle="softBold"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:background="@color/borderline"
+        android:layout_alignParentEnd="true"/>
+
+</LinearLayout>

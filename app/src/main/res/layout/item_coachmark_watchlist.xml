@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/ly_watchlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.bcasekuritas.mybest.widget.swipebutton.SwipeLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgWhite"
+            app:preview="none">
+
+            <TextView
+                android:id="@+id/btn_buy"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginRight="8dp"
+                android:background="@color/brandSuccess"
+                android:gravity="center"
+                android:text="BUY"
+                android:textColor="@color/textWhite" />
+
+            <TextView
+                android:id="@+id/btn_delete"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginLeft="8dp"
+                android:background="@color/brandWarning"
+                android:gravity="center"
+                android:text="DELETE"
+                android:textColor="@color/textWhite" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_watchlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgWhite">
+
+                <ImageView
+                    android:id="@+id/iv_stock"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginLeft="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="2"
+                    tools:text="BA"
+                    android:visibility="gone"
+                    app:txtColor="white"
+                    app:txtStyle="bold"
+                    app:txtFor="caption"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_stock"
+                    app:layout_constraintRight_toRightOf="@id/iv_stock"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_stock"
+                    app:layout_constraintTop_toTopOf="@id/iv_stock"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_stock_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/tv_company_name"
+                    app:layout_constraintLeft_toRightOf="@id/iv_stock"
+                    app:layout_constraintTop_toTopOf="@id/iv_stock"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    app:txtFor="body"
+                    app:txtStyle="bold"
+                    tools:text="BBCA" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_notation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_layout_border_5_no_padding"
+                    android:backgroundTint="@color/textYellow"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    tools:text="EX"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+                    app:txtFor="caption"
+                    app:txtStyle="softBold" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_company_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#828282"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    app:layout_constraintRight_toLeftOf="@id/tv_return"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_stock"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_stock_code"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stock_code"
+                    tools:text="100 Stocks" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/tv_return"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_stock"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    app:txtFor="body"
+                    app:txtStyle="bold"
+                    tools:text="2.180" />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_return"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_stock"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_price"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="- Rp30 (0.55%)" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.bcasekuritas.mybest.widget.swipebutton.SwipeLayout>
+
+    </LinearLayout>
+
+</layout>
+

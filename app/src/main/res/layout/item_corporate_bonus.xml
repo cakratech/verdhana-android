@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Ratio"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_ratio_val"
+            app:layout_constraintTop_toBottomOf="@id/divider"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ratio_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            tools:text="50 : 23"
+            app:layout_constraintStart_toEndOf="@id/tv_ratio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_ratio"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_cumulative_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Cum Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_factor"
+            app:layout_constraintEnd_toStartOf="@id/tv_cumulative_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_cumulative_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            tools:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_cumulative_date"
+            app:layout_constraintTop_toTopOf="@id/tv_cumulative_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_cumulative_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ex_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Ex Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_cumulative_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_ex_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ex_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            tools:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@+id/tv_ex_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_ex_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_ex_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_recording_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Recording Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ex_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_recording_date_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_recording_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            tools:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_recording_date"
+            app:layout_constraintTop_toTopOf="@id/tv_recording_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_recording_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_factor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Factor"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ratio"
+            app:layout_constraintEnd_toStartOf="@id/tv_factor_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_factor_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:visibility="gone"
+            tools:text="0.90"
+            app:layout_constraintStart_toEndOf="@id/tv_factor"
+            app:layout_constraintTop_toTopOf="@id/tv_factor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_factor"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_paydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Payment Date"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_recording_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_paydate_val"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_paydate_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            tools:text="8 Aug 2023"
+            app:layout_constraintStart_toEndOf="@id/tv_paydate"
+            app:layout_constraintTop_toTopOf="@id/tv_paydate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_paydate"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_view_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="View Stock"
+            app:btnStyle="primary"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_recording_date"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

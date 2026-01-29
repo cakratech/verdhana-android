@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ly_item_menu"
+    android:layout_width="72dp"
+    android:layout_height="85dp"
+    android:gravity="center"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/rounded_ff7a00_12"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="caption"
+        app:txtColor="white"
+        android:text="Fast Order"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>

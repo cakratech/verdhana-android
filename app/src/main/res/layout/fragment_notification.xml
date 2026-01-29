@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmNotification"
+            type="com.bcasekuritas.mybest.app.feature.notification.NotificationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/ly_toolbar_delete_account"
+            layout="@layout/layout_toolbar"
+            android:visibility="gone" />
+
+        <!-- tolbar -->
+        <include
+            android:id="@+id/toolbar_notification"
+            layout="@layout/layout_toolbar"
+            android:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_notification">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout_notification"
+                    style="@style/Widget.App.TabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabMaxWidth="0dp"
+                    app:tabGravity="fill"
+                    app:tabMode="fixed"
+                    app:tabIndicatorFullWidth="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabIndicatorColor="@color/tabIndicator"
+                    app:tabIndicatorHeight="2dp">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab_transaction_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab_general_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="General" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="16sp"
+                    android:includeFontPadding="false"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/tab_layout_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

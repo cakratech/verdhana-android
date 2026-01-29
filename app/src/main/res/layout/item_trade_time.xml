@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableLayout
+        android:id="@+id/key_stats_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:minHeight="20dp">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_trade_table_time"
+                android:layout_width="0dp"
+                android:layout_height="13dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/textPrimary"
+                app:txtFor="caption" />
+
+            <View
+                android:id="@+id/view_divider_title1"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#DFDFDF" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_trade_table_buy_lot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/textPrimary"
+                app:txtFor="caption" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_trade_table_percent_buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/textPrimary"
+                app:txtFor="caption" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/lp_trade_table_chart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:max="100"
+                android:progress="50"
+                app:trackColor="@color/textDown"
+                app:indicatorColor="@color/textUp"
+                app:trackThickness="8dp"
+                app:trackCornerRadius="2dp"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_trade_table_percent_sell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/textPrimary"
+                app:txtFor="caption" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_trade_table_sell_lot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="-"
+                android:textColor="@color/textPrimary"
+                app:txtFor="caption" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

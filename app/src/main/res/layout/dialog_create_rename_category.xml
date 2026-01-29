@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="big"
+            app:txtStyle="softBold"
+            android:text="Create New Watchlist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"/>
+
+        <com.bcasekuritas.mybest.widget.edittext.CustomEditTextWithTitle
+            android:id="@+id/edt_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:title="Name"
+            app:hint="Enter a name for your watchlist"
+            android:layout_marginTop="24dp"
+            app:edittextfor="watchlist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5/20"
+            android:layout_marginTop="5dp"
+            app:txtFor="body"
+            app:layout_constraintTop_toBottomOf="@id/edt_category"
+            app:layout_constraintRight_toRightOf="@id/edt_category"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:btnStyle="default"
+            android:text="Save"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_count"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

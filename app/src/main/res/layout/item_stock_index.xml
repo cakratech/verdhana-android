@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:background="@drawable/bg_circle_0154fa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_stock_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_stock_count"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="JI"
+        app:txtColor="white"
+        app:txtStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/iv_logo"
+        app:layout_constraintRight_toRightOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_logo"
+        app:layout_constraintBottom_toBottomOf="@id/iv_logo"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_stock_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        app:txtStyle="bold"
+        tools:text="PEFINDO25"
+        android:paddingTop="12dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_stock_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="caption"
+        app:txtColor="grey"
+        android:text="0 Stocks"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@id/tv_stock_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_stock_name"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        app:txtStyle="bold"
+        tools:text="8.780"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_stock_name"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_gain_loss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="caption"
+        android:layout_marginTop="2dp"
+        app:txtColor="green"
+        tools:text="+rp 30 (0.55%)"
+        app:layout_constraintEnd_toEndOf="@id/tv_price"
+        app:layout_constraintTop_toTopOf="@id/tv_stock_count"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

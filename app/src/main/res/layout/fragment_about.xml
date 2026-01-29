@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmAbout"
+            type="com.bcasekuritas.mybest.app.feature.about.AboutViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <include
+            android:id="@+id/ly_toolbar_about"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar_about">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout_about"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.05" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.95" />
+
+                        <ImageView
+                            android:id="@+id/iv_background_about"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="24dp"
+                            android:background="@drawable/img_bg_bca_vactor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_version_about" />
+
+                        <ImageView
+                            android:id="@+id/iv_image_about"
+                            android:layout_width="114dp"
+                            android:layout_height="114dp"
+                            android:layout_marginTop="92dp"
+                            android:background="@drawable/ic_bca_sekuritas"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_version_about" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_title_about"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:text="@string/text_about_app"
+                            app:txtStyle="softBold"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                            app:layout_constraintStart_toEndOf="@id/guideline_start"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:txtFor="aboutTitle" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_version_about"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:alpha="0.4"
+                            android:gravity="center"
+                            android:letterSpacing="0.01"
+                            android:lineSpacingExtra="4sp"
+                            android:text="version 1.1.0"
+                            android:textColor="@color/textWhite"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                            app:layout_constraintStart_toEndOf="@id/guideline_start"
+                            app:layout_constraintTop_toBottomOf="@id/tv_title_about"
+                            app:txtFor="body"
+                            app:txtStyle="softBold" />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:id="@+id/tv_desc_about"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="70dp"
+                            android:alpha="0.8"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:letterSpacing="0.01"
+                            android:lineSpacingExtra="5sp"
+                            android:text="@string/text_lorem"
+                            app:layout_constraintBottom_toTopOf="@+id/ll_about_social_media"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                            app:layout_constraintStart_toEndOf="@id/guideline_start"
+                            app:txtFor="body"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_about_social_media"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="70dp"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                            app:layout_constraintStart_toEndOf="@id/guideline_start">
+
+                            <ImageView
+                                android:id="@+id/iv_instagram_about"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_instagram_two" />
+
+                            <ImageView
+                                android:id="@+id/iv_youtube_about"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="30dp"
+                                android:src="@drawable/ic_youtube" />
+
+                            <ImageView
+                                android:id="@+id/iv_twitter_about"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="30dp"
+                                android:src="@drawable/ic_twitter" />
+
+                            <ImageView
+                                android:id="@+id/iv_whatsapp_about"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="30dp"
+                                android:src="@drawable/ic_whatsapp" />
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_search_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+            app:layout_constraintBottom_toBottomOf="@id/tv_company_name"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="2"
+            tools:text="BA"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:txtColor="white"
+            app:txtStyle="bold"
+            app:txtFor="caption"
+            app:layout_constraintLeft_toLeftOf="@id/iv_logo"
+            app:layout_constraintRight_toRightOf="@id/iv_logo"
+            app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+            app:layout_constraintTop_toTopOf="@id/iv_logo"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_stock_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="ASII"
+            app:txtStyle="bold"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/iv_logo"
+            app:layout_constraintBottom_toTopOf="@id/tv_company_name"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:txtFor="caption"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Astra International Tbk."
+            app:layout_constraintStart_toStartOf="@id/tv_stock_code"
+            app:layout_constraintEnd_toStartOf="@id/cb_stock"
+            app:layout_constraintTop_toBottomOf="@id/tv_stock_code"/>
+
+        <CheckBox
+            android:id="@+id/cb_stock"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            style="@style/Widget.App.CheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+            app:layout_constraintBottom_toBottomOf="@id/tv_company_name"/>
+
+        <ImageView
+            android:id="@+id/iv_chevron"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_right"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_stock_code"
+            app:layout_constraintBottom_toBottomOf="@id/tv_company_name"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

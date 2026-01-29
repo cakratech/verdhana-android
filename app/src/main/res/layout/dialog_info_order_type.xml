@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/button_info_close"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            app:btnStyle="transBlack"
+            app:icon="@drawable/ic_close_black"
+            android:gravity="end"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/button_info_close"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order Type"
+                    app:txtFor="title"
+                    app:txtStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_limit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Limit Order"
+                    app:txtFor="title"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    android:layout_marginTop="16dp"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_limit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_limit">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Menempatkan order pada harga yang diinginkan. Order akan dieksekusi pada harga tersebut atau lebih baik."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Placing an order at your desired price. The order will be executed at that price or at a more favorable price."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_market"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Market Order"
+                    app:txtFor="title"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    android:layout_marginTop="16dp"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/expand_limit"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_market"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_market">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Menempatkan order untuk langsung memenuhi jumlah volume yang dipesan secara seketika sesuai dengan ketersediaan volume di orderbook.\n\nTerdapat 3 tipe market order:"
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="1. Market to Limit (MTL)"
+                            app:txtFor="title"
+                            app:txtStyle="bold"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:text="Apabila terdapat sisa volume yang belum dapat terpenuhi, maka sisa volume tersebut akan diubah menjadi limit order."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="2. Fill or Kill (FOK)"
+                            app:txtFor="title"
+                            app:txtStyle="bold"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="Apabila tidak mencukupi maka keseluruhan pesanan akan di withdraw."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="3. Fill and Kill (FAK)"
+                            app:txtFor="title"
+                            app:txtStyle="bold"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="Apabila terdapat sisa volume yang belum dapat terpenuhi, maka sisa volume tersebut akan diwithdraw."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Placing an order at your desired quantity. The order will be executed immediately at the best available price."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_auto_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Automatic Order"
+                    app:txtFor="title"
+                    android:layout_marginTop="16dp"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/expand_market"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_auto_order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_auto_order">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mengirimkan order secara otomatis jika kondisi compare terpenuhi."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Sending an order automatically when the compare condition is met."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@id/scrollView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:btnStyle="default"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

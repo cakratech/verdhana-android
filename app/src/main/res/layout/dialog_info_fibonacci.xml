@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/button_info_close"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            app:btnStyle="transBlack"
+            app:icon="@drawable/ic_close_black"
+            android:gravity="end"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/button_info_close"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fibonnaci Pivot Point"
+                    app:txtFor="title"
+                    app:txtStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Level Fibonacci retracement dikombinasikan dengan pivot point untuk mengidentifikasi potensi zona support dan resistance."
+                    app:txtFor="title"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_info_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Fibonacci retracement levels combined with a pivot point to identify potential support and resistance zones."
+                    app:txtFor="caption"
+                    android:layout_marginLeft="16dp"
+                    app:layout_goneMarginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_pivot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pivot Point"
+                    app:txtFor="title"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    android:layout_marginTop="16dp"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_info_footer"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_pivot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pivot">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pivot Point dihitung dengan data hari sebelumnya: (High + Low + Close) ÷ 3."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Pivot Point is calculated by averaging the previous day's high, low, and close: (High + Low + Close) ÷ 3."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_support"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Support"
+                    app:txtFor="title"
+                    android:layout_marginTop="16dp"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/expand_pivot"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_support"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_support">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A price level where downward movement may pause or reverse. Fibonacci Support = Pivot Point - [(High - Low) × Fibonacci Ratios]."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Sebuah level harga di mana pergerakan turun dapat berhenti atau berbalik arah. Support = Pivot Point - [(Tertinggi - Terendah) × Rasio Fibonacci]."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                    android:id="@+id/tv_resistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Resistance"
+                    app:txtFor="title"
+                    android:layout_marginTop="16dp"
+                    android:drawableEnd="@drawable/ic_bot_row"
+                    app:txtStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/expand_support"/>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expand_resistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_resistance">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A price level where upward movement may stall or reverse. Fibonacci Resistance = Pivot Point + [(High - Low) × Fibonacci Ratios]."
+                            app:txtFor="title"
+                            />
+
+                        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Sebuah level harga di mana pergerakan naik dapat terhenti atau berbalik arah. Fibonacci Resistance = Pivot Point + [(Tertinggi - Terendah) × Rasio Fibonacci]."
+                            app:txtFor="caption"
+                            />
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@id/scrollView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:btnStyle="default"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

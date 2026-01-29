@@ -1,0 +1,6 @@
+{
+  "message": "Login Success",
+  "data": {
+    "token": "string"
+  }
+}

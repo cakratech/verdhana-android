@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/button_info_close"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            app:btnStyle="transBlack"
+            app:icon="@drawable/ic_close_black"
+            android:gravity="end"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_info_close">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Buying Limit"
+                tools:visibility="gone"
+                android:layout_marginBottom="16dp"
+                app:txtFor="body"
+                app:txtStyle="bold"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Unrealized Gain/Loss
+
+Keuntungan atau kerugian yang belum direalisasikan dari saham dalam portofolio, dihitung berdasarkan selisih antara harga beli rata-rata dan harga terakhir dikalikan dengan jumlah lot yang dimiliki."
+                
+                app:txtFor="body"/>
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_foot_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Estimation of unrealized gains or losses of stocks in the portfolio, excluding fees, based on the last price."
+                tools:visibility="gone"
+                android:textStyle="italic"
+                android:layout_marginTop="16dp"
+                app:txtFor="caption"/>
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                app:btnStyle="default"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="h4"
+            app:txtStyle="bold"
+            android:text="E-IPO"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/btn_close"
+            app:layout_constraintBottom_toBottomOf="@id/btn_close"
+            app:layout_constraintTop_toTopOf="@id/btn_close"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:btnStyle="transBlack"
+            app:iconGravity="end"
+            app:icon="@drawable/ic_close"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_ipo_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar_building"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_close"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ipo_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Fri, 20 Jul 2023"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/iv_ipo_company"
+            app:layout_constraintTop_toTopOf="@id/iv_ipo_company"
+            app:layout_constraintBottom_toBottomOf="@id/iv_ipo_company"/>
+
+        <ImageView
+            android:id="@+id/iv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_calendar_cal"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/iv_ipo_company"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="body"
+            android:text="Fri, 20 Jul 2023"
+            android:visibility="gone"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_date"
+            app:layout_constraintTop_toTopOf="@id/iv_date"
+            app:layout_constraintBottom_toBottomOf="@id/iv_date"/>
+
+        <ImageView
+            android:id="@+id/iv_ipo_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar_serial"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/iv_date"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_ipo_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="1.123.123"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/iv_ipo_qty"
+            app:layout_constraintTop_toTopOf="@id/iv_ipo_qty"
+            app:layout_constraintBottom_toBottomOf="@id/iv_ipo_qty"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_ipo_view_ipo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="view E-IPO"
+            app:btnStyle="primary"
+            android:visibility="gone"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/tv_ipo_qty"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

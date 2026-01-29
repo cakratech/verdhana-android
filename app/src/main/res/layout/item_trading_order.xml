@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bgWhite"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_buy_value"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_cbe7d7_8"
+        android:padding="10dp"
+        tools:text="50000 (1)"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/guideline_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:txtFor="body"
+        app:txtColor="white"/>
+
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_bid_value"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toStartOf="@id/guideline_2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_1"
+        app:layout_constraintTop_toTopOf="@id/tv_buy_value"
+        app:txtFor="body"
+        tools:text="7000"/>
+
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_price_value"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/guideline_3"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_2"
+        app:layout_constraintTop_toTopOf="@id/tv_bid_value"
+        app:txtFor="body"
+        tools:text="7000" />
+
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_offer_value"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/textRed"
+        app:layout_constraintEnd_toStartOf="@id/guideline_4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_3"
+        app:layout_constraintTop_toTopOf="@id/tv_price_value"
+        app:txtFor="body"
+        tools:text="7000" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar_offer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        app:indicatorColor="@color/textRed"
+        android:indeterminate="false"
+        android:progress="0"
+        app:trackColor="@color/bgWhite"
+        app:indicatorSize="6dp"
+        app:trackThickness="4dp"
+        app:indicatorDirectionLinear="leftToRight"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="@id/tv_offer_value"
+        app:layout_constraintEnd_toEndOf="@+id/tv_offer_value"
+        app:layout_constraintStart_toStartOf="@id/tv_offer_value" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar_bid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        app:indicatorColor="@color/green"
+        android:indeterminate="false"
+        android:progress="0"
+        app:trackColor="@color/bgWhite"
+        app:indicatorSize="6dp"
+        app:trackThickness="4dp"
+        app:indicatorDirectionLinear="rightToLeft"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bid_value"
+        app:layout_constraintEnd_toEndOf="@+id/tv_bid_value"
+        app:layout_constraintStart_toStartOf="@id/tv_bid_value"  />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_sell_value"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_fed9d9_8"
+        android:padding="10dp"
+        tools:text="50000 (1)"
+        app:txtColor="white"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_4"
+        app:layout_constraintTop_toTopOf="@id/tv_offer_value"
+        app:txtFor="body" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

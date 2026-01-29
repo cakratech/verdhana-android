@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgWhite"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:txtFor="h3"
+            app:txtStyle="softBold"
+            android:text="You already have an active order"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/btn_close"
+            app:layout_constraintTop_toTopOf="@id/btn_close"
+            app:layout_constraintBottom_toBottomOf="@id/btn_close"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Button.Icon"
+            app:btnStyle="transBlack"
+            app:icon="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_add_more_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you want to add more order?"
+            app:txtFor="title"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            />
+
+        <View
+            android:id="@+id/vw_detail_order"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_ffffff_8_stroke_dae8f6"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_more_order"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/bg_detail_stock"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:background="@color/transparent"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/vw_detail_order"/>
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_circle"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@id/bg_detail_stock"
+            app:layout_constraintTop_toTopOf="@id/bg_detail_stock"
+            app:layout_constraintBottom_toBottomOf="@id/bg_detail_stock"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_detail_stock_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            app:txtStyle="softBold"
+            app:txtColor="black"
+            android:text="BBCA"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/iv_logo"
+            app:layout_constraintTop_toTopOf="@id/iv_logo"
+            app:layout_constraintBottom_toTopOf="@id/tv_detail_company_name"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_detail_company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="caption"
+            app:txtColor="grey"
+            tools:text="Bank Central Asia Tbk."
+            app:layout_constraintStart_toStartOf="@id/tv_detail_stock_code"
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_stock_code"
+            app:layout_constraintBottom_toBottomOf="@id/iv_logo"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_buy_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_015fcd_16_status"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/bg_detail_stock"
+            app:layout_constraintBottom_toBottomOf="@id/bg_detail_stock"
+            app:txtColor="white"
+            app:txtFor="body"
+            app:txtStyle="softBold"
+            tools:text="Buy" />
+
+        <View
+            android:id="@+id/vw_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/bg_detail_stock"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_total_order"
+            android:layout_width="0dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/item_order_fast_order"
+            tools:itemCount="5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/vw_separator"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            android:text="Total"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintEnd_toStartOf="@id/tv_total_val"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/rcv_total_order"
+            app:layout_constraintBottom_toBottomOf="@id/vw_detail_order"
+            />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_total_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            app:txtStyle="bold"
+            tools:text="912.500"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_total"
+            app:layout_constraintTop_toTopOf="@id/tv_total"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+
+        <CheckBox
+            android:id="@+id/cb_dont_prevent_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.App.CheckBox"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:text="Don't prevent me from buying the same stock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/vw_detail_order"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:btnStyle="outline"
+            android:text="Cancel"
+            app:layout_constraintEnd_toStartOf="@id/btn_add_order"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/cb_dont_prevent_order"/>
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_add_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Add Order"
+            app:btnStyle="primary"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintTop_toTopOf="@id/btn_cancel"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

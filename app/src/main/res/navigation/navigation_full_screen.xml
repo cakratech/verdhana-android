@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_full_screen"
+    app:startDestination="@id/dashboard_fragment">
+
+    <activity
+        android:id="@+id/exception_handler_activity"
+        android:name="com.bcasekuritas.mybest.app.feature.activity.exception.ExceptionHandlerActivity"
+        android:label="activity_exception_handler"
+        tools:layout="@layout/activity_exception_handler"/>
+
+    <fragment
+        android:id="@+id/dashboard_fragment"
+        android:name="com.bcasekuritas.mybest.app.feature.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard"/>
+
+</navigation>

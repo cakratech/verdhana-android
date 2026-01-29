@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="title"
+        android:text="DIVIDEND AMRT"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/btn_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_title"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:btnStyle="transBlack"
+        app:iconGravity="end"
+        app:icon="@drawable/ic_close"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_title"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Cash Dividend"
+        android:paddingBottom="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_dividend_cash_val"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_title"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_cumul_date"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_cash_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Rp500000"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_dividend_cash"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_title"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_cumul_date_val"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_cumul_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Cumulative Date"
+        android:paddingBottom="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_dividend_cumul_date_val"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_ex_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_cash"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_cumul_date_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="08 Aug 2023"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_dividend_cumul_date"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_ex_date_val"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_cash_val"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_ex_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Ex Date"
+        android:paddingBottom="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_dividend_ex_date_val"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_receive_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_cumul_date"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_ex_date_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="08 Aug 2023"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_dividend_ex_date"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_receive_date_val"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_cumul_date_val"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_receive_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Recording Date"
+        android:paddingBottom="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_dividend_receive_date_val"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_pay_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_ex_date"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_receive_date_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="08 Aug 2023"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_dividend_receive_date"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/tv_dividend_pay_date_val"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_ex_date_val"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_pay_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Payment Date"
+        android:paddingBottom="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_dividend_pay_date_val"
+        app:layout_constraintBottom_toTopOf="@id/btn_dividend_view_stock"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_receive_date"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_dividend_pay_date_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="08 Aug 2023"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_dividend_pay_date"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/btn_dividend_view_stock"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_receive_date"/>
+    
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_dividend_view_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Stock"
+        app:btnStyle="primary"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/btn_dividend_view_history"
+        app:layout_constraintTop_toBottomOf="@id/tv_dividend_pay_date"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_dividend_view_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View History"
+        app:btnStyle="primary"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/btn_dividend_view_stock"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+<!--    Visibility for dividend dialog-->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_dividend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_dividend_cash, tv_dividend_cash_val, tv_dividend_cumul_date,
+        tv_dividend_cumul_date_val, tv_dividend_ex_date, tv_dividend_ex_date_val, tv_dividend_receive_date,
+        tv_dividend_receive_date_val, tv_dividend_pay_date, tv_dividend_pay_date_val, btn_dividend_view_stock,
+        btn_dividend_view_history"/>
+
+    <ImageView
+        android:id="@+id/iv_rups_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_title"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_rups_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Fri, 20 Jul 2023"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_rups_date"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_title"
+        app:layout_constraintBottom_toBottomOf="@id/iv_rups_date"/>
+
+    <ImageView
+        android:id="@+id/iv_rups_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/iv_rups_date"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_rups_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="10:00"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_rups_time"
+        app:layout_constraintTop_toTopOf="@id/iv_rups_time"
+        app:layout_constraintBottom_toBottomOf="@id/iv_rups_time"/>
+
+    <ImageView
+        android:id="@+id/iv_rups_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/iv_rups_time"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_rups_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Ruko Fatmawati Mas Blok III kav. 328-330, Jl. RS. Fatmawati Raya No.20, RT.3/RW.10, Cilandak Bar., Kec. Cilandak, Jakarta Selatan, DKI Jakarta 12430"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_rups_time"
+        app:layout_constraintTop_toBottomOf="@id/iv_rups_time"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_rups_view_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Stock"
+        app:btnStyle="primary"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_rups_address"/>
+
+<!--    visibility for rups dialog-->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_rups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_rups_time, tv_rups_time, iv_rups_date, tv_rups_date,
+        iv_rups_address, tv_rups_address, btn_rups_view_stock"/>
+
+    <ImageView
+        android:id="@+id/iv_ipo_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_title"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_ipo_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="Fri, 20 Jul 2023"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_ipo_company"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_title"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ipo_company"/>
+
+    <ImageView
+        android:id="@+id/iv_ipo_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/iv_ipo_company"/>
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_ipo_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:txtFor="body"
+        android:text="1.123.123"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_ipo_qty"
+        app:layout_constraintTop_toTopOf="@id/iv_ipo_qty"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ipo_qty"/>
+
+    <com.bcasekuritas.mybest.widget.button.CustomButton
+        android:id="@+id/btn_ipo_view_ipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="view E-IPO"
+        app:btnStyle="primary"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/tv_ipo_qty"/>
+
+    <!--    visibility for rups dialog-->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_ipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_ipo_company, iv_ipo_qty, tv_ipo_company, tv_ipo_qty,btn_ipo_view_ipo"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmFastOrder"
+            type="com.bcasekuritas.mybest.app.feature.fastorder.FastOrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <include
+            android:id="@+id/ly_toolbar"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_set_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txtFor="title"
+            app:txtStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Fast Order Setup"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/ly_toolbar"/>
+
+        <ImageView
+            android:id="@+id/btn_info"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_text_info"
+            app:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/tv_set_up"
+            app:layout_constraintBottom_toBottomOf="@id/tv_set_up"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_cash"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Max. Cash"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/tv_max_limit"
+            app:layout_constraintTop_toBottomOf="@id/tv_set_up"
+            app:txtFor="body"
+            app:txtColor="grey"/>
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_limit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Max. Limit"
+            android:gravity="center"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_max_cash"
+            app:layout_constraintEnd_toStartOf="@id/tv_max_sell"
+            app:layout_constraintTop_toTopOf="@id/tv_max_cash"
+            app:txtFor="body"
+            app:txtColor="grey" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_sell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Max. Sell"
+            android:gravity="center"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_max_limit"
+            app:layout_constraintEnd_toStartOf="@id/tv_volume"
+            app:layout_constraintTop_toTopOf="@id/tv_max_cash"
+            app:txtFor="body"
+            app:txtColor="grey" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1.5"
+            android:text="Volume"
+            app:layout_constraintStart_toEndOf="@id/tv_max_sell"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/tv_max_cash"
+            app:txtFor="body"
+            app:txtColor="grey" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_cash_val"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="111111"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_eef8fafb_8"
+            app:layout_constraintBottom_toBottomOf="@id/edt_volume"
+            app:layout_constraintEnd_toEndOf="@id/tv_max_cash"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_max_cash"
+            app:layout_constraintTop_toTopOf="@id/edt_volume"
+            app:txtFor="title" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_limit_val"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="879.879"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_eef8fafb_8"
+            app:layout_constraintBottom_toBottomOf="@id/edt_volume"
+            app:layout_constraintEnd_toEndOf="@id/tv_max_limit"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_max_limit"
+            app:layout_constraintTop_toTopOf="@id/edt_volume"
+            app:txtFor="title" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_max_sell_val"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="0"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_eef8fafb_8"
+            app:layout_constraintBottom_toBottomOf="@id/edt_volume"
+            app:layout_constraintEnd_toEndOf="@id/tv_max_sell"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_max_sell"
+            app:layout_constraintTop_toTopOf="@id/edt_volume"
+            app:txtFor="title" />
+
+        <com.bcasekuritas.mybest.widget.edittext.EditTextDrawable
+            android:id="@+id/edt_volume"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_ffffff_8_stroke_dae8f6"
+            android:hint="0"
+            android:maxLength="9"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintHorizontal_weight="1.5"
+            app:layout_constraintStart_toStartOf="@id/tv_volume"
+            app:layout_constraintTop_toBottomOf="@id/tv_volume" />
+
+        <ImageView
+            android:id="@+id/iv_setup_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@id/edt_volume"
+            app:layout_constraintTop_toTopOf="@id/edt_volume"
+            app:layout_constraintBottom_toBottomOf="@id/edt_volume"/>
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/spacer_1"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_volume" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_buying_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Buying Limit"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/spacer_1"
+            app:txtFor="caption" />
+
+        <ImageView
+            android:id="@+id/btn_info_buying_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info_blue"
+            app:tint="@color/txtBlackWhite"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@id/tv_buying_limit"
+            app:layout_constraintTop_toTopOf="@id/tv_buying_limit"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buying_limit"
+            />
+
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_buying_limit_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Rp15.000.000"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buying_limit"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toTopOf="@id/tv_buying_limit"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <View
+            android:id="@+id/view_divider_trading"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_buying_limit" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.23" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.41" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.59" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_buy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Buy"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/guideline_1"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_trading"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_bid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Bid"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/guideline_2"
+            app:layout_constraintHorizontal_weight="0.8"
+            app:layout_constraintStart_toEndOf="@id/guideline_1"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_trading"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Price"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/guideline_3"
+            app:layout_constraintHorizontal_weight="0.8"
+            app:layout_constraintStart_toEndOf="@id/guideline_2"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_trading"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_offer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Offer"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/guideline_4"
+            app:layout_constraintHorizontal_weight="0.9"
+            app:layout_constraintStart_toEndOf="@id/guideline_3"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_trading"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_sell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sell"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/guideline_4"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_trading"
+            app:txtFor="caption"
+            app:txtStyle="bold" />
+
+        <View
+            android:id="@+id/view_divider_trading_bottom"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sell"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--                <ImageView-->
+        <!--                    android:layout_width="12dp"-->
+        <!--                    android:layout_height="12dp"-->
+        <!--                    android:src="@drawable/ic_arrow_triangle"-->
+        <!--                    android:layout_marginEnd="10dp"-->
+        <!--                    app:layout_constraintEnd_toEndOf="@id/tv_bid"-->
+        <!--                    app:layout_constraintTop_toTopOf="@id/tv_bid"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="@id/tv_bid"/>-->
+
+        <!--                <ImageView-->
+        <!--                    android:layout_width="12dp"-->
+        <!--                    android:layout_height="12dp"-->
+        <!--                    android:src="@drawable/ic_arrow_triangle"-->
+        <!--                    android:layout_marginEnd="5dp"-->
+        <!--                    app:layout_constraintEnd_toEndOf="@id/tv_offer"-->
+        <!--                    app:layout_constraintTop_toTopOf="@id/tv_offer"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="@id/tv_offer"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_fast_order_book"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_buy_sum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_buy"
+            android:background="@color/bgWhite"
+            tools:listitem="@layout/item_trading_order"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_buy_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/divider_btn"
+            app:layout_constraintEnd_toStartOf="@id/tv_bid_sum"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:txtFor="caption" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_bid_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="2.123.000.000"
+            app:txtColor="green"
+            android:text="0"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buy_sum"
+            app:layout_constraintEnd_toStartOf="@id/tv_sum"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_buy_sum"
+            app:layout_constraintTop_toBottomOf="@id/divider_sum"
+            app:txtFor="caption" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="SUM"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buy_sum"
+            app:layout_constraintEnd_toStartOf="@id/tv_offer_sum"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_bid_sum"
+            app:txtFor="caption" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_offer_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="145.145.000.0"
+            app:txtColor="red"
+            android:text="0"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buy_sum"
+            app:layout_constraintEnd_toStartOf="@id/tv_sell_sum"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_sum"
+            app:layout_constraintTop_toBottomOf="@id/divider_sum"
+            app:txtFor="caption" />
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/tv_sell_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/tv_buy_sum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_offer_sum"
+            app:txtFor="caption" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/spacer_button"
+            android:layout_width="16dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_withdraw_all_buy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Withdraw All"
+            android:enabled="false"
+            android:textAllCaps="false"
+            app:btnStyle="green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spacer_button"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_withdraw_all_sell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Withdraw All"
+            android:textAllCaps="false"
+            android:enabled="false"
+            app:btnStyle="red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/spacer_button" />
+
+        <View
+            android:id="@+id/divider_sum"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/borderline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_buy_sum" />
+
+        <View
+            android:id="@+id/divider_btn"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/borderline"
+            app:layout_constraintBottom_toTopOf="@id/btn_withdraw_all_buy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/vw_amend_buy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/coachMark"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/tv_bid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bid"
+            app:layout_constraintBottom_toBottomOf="@id/rcv_fast_order_book"
+            />
+
+        <View
+            android:id="@+id/vw_amend_sell"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/coachMark"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/tv_buy"
+            app:layout_constraintEnd_toEndOf="@id/tv_offer"
+            app:layout_constraintTop_toBottomOf="@id/tv_bid"
+            app:layout_constraintBottom_toBottomOf="@id/rcv_fast_order_book"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

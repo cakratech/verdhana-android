@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+
+    compileSdk androidCompileSdkVersion
+    namespace 'com.bcasekuritas.rabbitmq'
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        compileSdk androidCompileSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../keystore/mybest')
+            storePassword '11223344a'
+            keyPassword '11223344a'
+            keyAlias 'mybest'
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "int", "SERVER_ENV", "3"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        staging {
+            buildConfigField "int", "SERVER_ENV", "2"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "int", "SERVER_ENV", "1"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+    ndkVersion '27.0.12077973'
+}
+
+dependencies {
+
+    implementation kotlinStdLib
+
+    // Kotlin Coroutines
+    implementation support.coroutines
+    implementation support.coroutinesCore
+    implementation support.coroutinesPlay
+
+    // Logs
+    implementation logs.timber
+    implementation "com.google.protobuf:protobuf-java:2.6.1"
+    implementation "com.rabbitmq:amqp-client:5.20.0"
+    implementation 'org.bouncycastle:bcprov-jdk16:1.46'
+    implementation 'androidx.core:core:1.10.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+}

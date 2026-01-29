@@ -1,0 +1,256 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+
+android {
+
+    compileSdk androidCompileSdkVersion
+    namespace 'com.bcasekuritas.mybest'
+
+    defaultConfig {
+        applicationId "com.bcasekuritas.mybest"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        // production
+        versionCode 36
+        versionName "1.4.2"
+        // development
+//        versionCode 1
+//        versionName "1.0.123"
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        externalNativeBuild {
+            cmake {
+                def bSize = localProperties.getProperty('BUFFER_SIZE')
+                cppFlags "-DBUFFER_SIZE=${bSize}"
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    tasks.withType(KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_17.toString()
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+        dataBinding true
+        viewBinding true
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'build/generated/ksp/debug/kotlin'
+            java.srcDirs += 'build/generated/ksp/release/kotlin'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../keystore/mybest')
+            storePassword '11223344a'
+            keyPassword '11223344a'
+            keyAlias 'mybest'
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            buildConfigField "int", "VARIANT_ENV", "0"
+            buildConfigField "int", "SERVER_ENV", "3"
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseCrashlytics {
+                // Enable processing and uploading of native symbols to Firebase servers.
+                // By default, this is disabled to improve build speeds.
+                // This flag must be enabled to see properly-symbolicated native
+                // stack traces in the Crashlytics dashboard.
+                nativeSymbolUploadEnabled true
+            }
+        }
+        staging {
+            applicationIdSuffix ".stg"
+            versionNameSuffix "-stg"
+            buildConfigField "int", "VARIANT_ENV", "0"
+            buildConfigField "int", "SERVER_ENV", "2"
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            firebaseCrashlytics {
+                // Enable processing and uploading of native symbols to Firebase servers.
+                // By default, this is disabled to improve build speeds.
+                // This flag must be enabled to see properly-symbolicated native
+                // stack traces in the Crashlytics dashboard.
+                nativeSymbolUploadEnabled true
+            }
+        }
+        release {
+            buildConfigField "int", "VARIANT_ENV", "0"
+            buildConfigField "int", "SERVER_ENV", "1"
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            firebaseCrashlytics {
+                // Enable processing and uploading of native symbols to Firebase servers.
+                // By default, this is disabled to improve build speeds.
+                // This flag must be enabled to see properly-symbolicated native
+                // stack traces in the Crashlytics dashboard.
+                nativeSymbolUploadEnabled true
+            }
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+    ndkVersion '27.0.12077973'
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':rabbitmq')
+    implementation kotlinStdLib
+
+    // Logs
+    debugImplementation logs.chucker
+    releaseImplementation logs.chuckerNoOp
+    implementation logs.timber
+
+    // Android-X
+    implementation support.material
+    implementation support.support
+    implementation support.appcompat
+    implementation support.fragment
+    implementation support.constraint
+    implementation support.cardview
+    implementation support.recyclerview
+    implementation support.viewpager2
+    implementation support.swiperefreshlayout
+    implementation support.activityKtx
+
+    // Multidex
+    implementation libs.multidex
+
+    // Kotlin-X
+    implementation support.core
+
+    // ANDROID WORK RUN-TIMER
+    implementation libs.workRunTime
+
+    // RETROFIT
+    implementation libs.retrofit
+
+    // GSON
+    implementation libs.gson
+
+    // Android Navigation
+    implementation support.navigationFragment
+    implementation support.navigationUi
+
+    // ViewModel and Livedata
+    implementation support.liveData
+//    implementation support.lifecycle
+    implementation support.lifecycleVM
+    implementation support.lifecycleVMSavedState
+
+    // Hilt
+    implementation libs.hiltAndroid
+    kapt libs.hiltCompilerAndroid
+
+    // Kotlin Coroutines
+    implementation support.coroutines
+    implementation support.coroutinesCore
+    implementation support.coroutinesPlay
+
+    // Room database
+    implementation support.room
+    kapt support.roomCompiler
+    implementation support.roomCommon
+    implementation support.roomKtx
+
+    // GLIDE LIBRARY
+    implementation libs.glide
+    kapt libs.glideCompiler
+    annotationProcessor libs.glideCompiler
+
+    // LOTTIE AND OTHER ANIMATION PLAYER
+//    implementation libs.lottie
+    // RASP
+    implementation libs.talsecSecurityRASP
+    // Custom Tabs Chrome
+    implementation support.browser
+
+    // Secure Preference
+    implementation libs.securePref
+
+    // Expand Layout
+    implementation libs.expandLayout
+
+    // Biometric
+    implementation libs.biometric
+
+    // Stock Chart
+    implementation libs.stockChart
+
+    // View Pager
+    implementation libs.viewpager
+
+    // Protobuf
+    implementation libs.protobuf
+
+    implementation libs.splashScreen
+
+    // Firebase
+    implementation platform(firebase.bom)
+    implementation firebase.analyticsKtx
+    implementation firebase.messagingKtx
+    implementation firebase.configKtx
+    implementation firebase.crashlitycsNdk
+
+    // Google Auth
+//    implementation libs.googleAuth
+
+}
+
+kapt {
+    correctErrorTypes true
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ffffff_8_stroke_dae8f6">
+
+        <com.bcasekuritas.mybest.widget.edittext.EditTextDrawable
+            android:id="@+id/edt_searchbar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/transparent"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/brandPrimaryBCABlue"
+            android:hint="Search Stock Code"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:paddingLeft="16dp"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            app:et_drawableLeftCompat="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/btn_close"
+            app:layout_constraintEnd_toStartOf="@+id/btn_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.bcasekuritas.mybest.widget.button.CustomButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:btnStyle="transBlack"
+            app:icon="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/edt_searchbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "666444523123",
+    "project_id": "mybest-new-app-dev",
+    "storage_bucket": "mybest-new-app-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666444523123:android:bec14421420a0d3fe72c06",
+        "android_client_info": {
+          "package_name": "com.bcasekuritas.mybest.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjl8ExUT_O_h1wI8WU828fvHx1sjwUwJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

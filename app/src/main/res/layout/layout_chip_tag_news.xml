@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="20dp"
+    style="@style/ChipTagNews"
+    tools:text="PANI"
+    android:textSize="12sp"
+    app:chipMinTouchTargetSize="24dp"
+    app:closeIconVisible="true"
+    app:closeIcon="@drawable/ic_arrow_right_black"
+    app:closeIconTint="@color/txtWhiteBlack"
+    app:chipCornerRadius="20dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />

@@ -1,0 +1,3 @@
+rootProject.name = "verdhana"
+include ':app'
+include ':rabbitmq'

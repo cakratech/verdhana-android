@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmRunningTrade"
+            type="com.bcasekuritas.mybest.app.feature.runningtrade.RunningTradeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite">
+
+        <!-- tolbar -->
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Running Trade"
+                app:txtFor="big"
+                app:txtStyle="softBold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_layout_start_stop_running_trade"
+                android:drawableStart="@drawable/ic_media"
+                android:drawablePadding="5dp"
+                android:text="Start"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_layout_start_stop_running_trade"
+                android:drawableStart="@drawable/ic_stop_running_trade"
+                android:drawablePadding="5dp"
+                android:fontFamily="sans-serif"
+                android:text="Stop"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <!-- market closed -->
+        <LinearLayout
+            android:id="@+id/ly_market_closed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_closed" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif"
+                android:text="Market is closed."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:txtFor="big"
+                app:txtStyle="bold" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_portfolio"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:includeFontPadding="false"
+                android:textSize="16sp" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Market opens on Monday - Friday between \n09.00 - 16.15"
+                android:textAlignment="center"
+                android:textColor="#9a9a9a"
+                android:textSize="16sp" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="sans-serif"
+                android:text="Trade will resume in:"
+                android:textAlignment="center"
+                android:textColor="#5e5e5e"
+                android:textSize="14sp" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_layout_timer_running_trade"
+                android:drawableStart="@drawable/ic_time_running_trade"
+                android:drawablePadding="5dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:txtStyle="bold"
+                tools:text="11H : 14M : 59S" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/btn_set_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Set Reminder"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:txtColor="blue"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+        </LinearLayout>
+
+        <!-- market open -->
+
+        <com.bcasekuritas.mybest.widget.textview.CustomTextView
+            android:id="@+id/et_search_running_trade"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_layout_border_5"
+            android:drawableStart="@drawable/ic_search_0154fa"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="Search code or name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_filter"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_selected_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/et_search_running_trade"
+            app:layout_constraintEnd_toEndOf="@+id/et_search_running_trade"
+            app:layout_constraintStart_toStartOf="@id/et_search_running_trade"
+            app:layout_constraintTop_toTopOf="@id/et_search_running_trade"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_multiple_selection_result"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/bg_layout_border_5"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/et_search_running_trade"
+            app:layout_constraintLeft_toRightOf="@id/et_search_running_trade"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_search_running_trade">
+
+            <ImageView
+                android:id="@+id/ic_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_filter"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_market_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_f0f5f8_8"
+            android:paddingVertical="16dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search_running_trade"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:id="@+id/tv_timer_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:drawableStart="@drawable/ic_time_running_trade"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/img_notif"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/img_notif"
+                app:txtStyle="softBold"
+                tools:text="11H : 14M : 59S left until market resume" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="16dp"
+                android:text="left until market resume."
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_timer_box"
+                app:layout_constraintLeft_toRightOf="@id/tv_timer_box"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_timer_box" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Set Reminder"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_timer_box"
+                app:layout_constraintTop_toBottomOf="@id/tv_timer_box"
+                app:txtColor="blue"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_row_running_trade"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/bgLightGrey"
+            android:gravity="center_vertical"
+            android:weightSum="5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/box_market_close">
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="Time"
+                android:textAlignment="center"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="Code"
+                android:textAlignment="center"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="Price"
+                android:textAlignment="center"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.3"
+                android:text="Chg"
+                android:textAlignment="center"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+            <com.bcasekuritas.mybest.widget.textview.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lot"
+                android:textAlignment="center"
+                app:txtFor="body"
+                app:txtStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_running_trade"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/ly_button_buy_sell"
+            app:layout_constraintTop_toBottomOf="@id/ly_row_running_trade"
+            tools:itemCount="30"
+            tools:listitem="@layout/item_running_trade" />
+
+        <View
+            android:id="@+id/drop_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:elevation="1dp"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintTop_toTopOf="@id/ly_button_buy_sell"
+            android:background="@drawable/bg_drop_shadow"/>
+
+        <LinearLayout
+            android:id="@+id/ly_button_buy_sell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/bgBottomSheet"
+            android:padding="16dp"
+            android:weightSum="2"
+            android:elevation="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_sell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="6dp"
+                app:btnStyle="red"
+                android:text="Sell"/>
+
+            <com.bcasekuritas.mybest.widget.button.CustomButton
+                android:id="@+id/btn_buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                app:btnStyle="green"
+                android:text="Buy"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/market_open"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="rcv_running_trade, ly_row_running_trade "
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

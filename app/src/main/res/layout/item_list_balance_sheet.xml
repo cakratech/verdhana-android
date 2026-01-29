@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_data_item"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_period"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/bgPrimary"
+        android:gravity="center_vertical|end"
+        android:minHeight="35dp"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_cash"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_total_assets"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_current_asset"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:minHeight="30dp"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_non_current_asset"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_liabilities"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_current_liabilities"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_non_current_liabilities"
+        app:txtFor="caption"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text=""/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderline" />
+
+    <com.bcasekuritas.mybest.widget.textview.CustomTextView
+        android:id="@+id/tv_data_total_equity"
+        app:txtFor="caption"
+        app:txtStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical|end"
+        android:paddingHorizontal="5dp"
+        android:text="" />
+</LinearLayout>

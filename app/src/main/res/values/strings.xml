@@ -1,0 +1,459 @@
+<resources>
+    <string name="app_name">BCA Sekuritas-Dev</string>
+    <string name="deep_link">percobaan-67fdd.web.app</string>
+
+    <!--App Message-->
+    <string name="error_retry_api">Please retry!</string>
+    <string name="error_default_api">Something wrong happened!</string>
+    <string name="default_error_message">Some Error Occurred!</string>
+    <string name="connection_error">Internet connection lost!</string>
+    <string name="search_hint">Cari…</string>
+
+    <!--Action Intent-->
+    <string name="profile_choose_photo">Ambil gambar dari</string>
+    <string name="profile_choose_file">Ambil file dari</string>
+
+    <!--Menu-->
+    <string name="menu_home">Home</string>
+    <string name="menu_discover">Discover</string>
+    <string name="menu_portofolio">Portfolio</string>
+    <string name="menu_news">News</string>
+    <string name="menu_profile">Profile</string>
+
+    <!--Logout notification dialog-->
+    <string name="logout_description">Keluar dari aplikasi?</string>
+    <string name="logout_button_positive">Logout</string>
+    <string name="logout_button_negative">Batal</string>
+
+    <!--Dialog Ask Permission-->
+    <string name="ask_choose_photo">Ambil gambar dari</string>
+    <string name="ask_choose_file">Ambil file dari</string>
+    <string name="ask_permission_title">Izin Dibutuhkan</string>
+    <string name="ask_permission_description">Skolla membutuhkan izin storage untuk mencadangkan dan memulihkan data. Skolla juga membutuhkan akses kamera untuk perbaharuan foto profile kamu. Izinkan akses supaya Skollamate bisa mengakses fitur-fitur berikut.</string>
+    <string name="ask_permission_button_positive">Izinkan</string>
+
+    <!--Permission Failed-->
+    <string name="permission_denied_title">Gagal Akses</string>
+    <string name="permission_denied_description">Fitur ini tidak dapat diakses karena tidak diberikan izin pada device anda. Silahkan lakukan pengaturan ulang pada device anda.</string>
+    <string name="permission_denied_button">OKE</string>
+
+    <string name="permission_denied_read_write_description">Maaf kak, kami tidak dapat menulis data di handphone kakak karena tidak diizinkan oleh kakak. Tolong diaktifkan terlebih dahulu.</string>
+    <string name="permission_denied_read_write_button">Aktifkan</string>
+
+    <!-- Dialog Expired -->
+    <string name="session_expired_title">Sesi Akun Berakhir</string>
+    <string name="session_expired_description">Kamu telah login di perangkat lain. Silakan login kembali jika kamu ingin melakukan aktivitas kamu di perangkat ini</string>
+    <string name="session_expired_button_positive">Oke</string>
+
+    <!--UIDialog Info Preview-->
+    <string name="dialog_preview_title">Selamat datang di App!</string>
+    <string name="dialog_preview_description">Kami selalu memberikan servis terbaik kepada customer, karena kamu sangat berati</string>
+    <string name="dialog_preview_button">LET\'S DO IT!</string>
+
+    <!--Automatic Time-->
+    <string name="automatic_time_title">Ubah Pengaturan Anda</string>
+    <string name="automatic_time_description">Untuk dapat memulai tryout silakan ubah pengaturan waktu anda ke mode otomatis</string>
+    <string name="automatic_time_button">OKE</string>
+
+    <!--Network Error-->
+    <string name="error_network_title">Whoops!</string>
+    <string name="error_network_description">Tidak ada koneksi. Pastikan Wifi dan Data anda menyala</string>
+    <string name="error_network_interupted_title">Koneksi Terputus!</string>
+    <string name="error_network_interupted_description">Koneksi terputus. Cek kembali koneksi kamu</string>
+    <string name="error_network_null_description">Respon Kosong. Cek kembali koneksi kamu</string>
+    <string name="error_network_facebook">Error. Silakan lakukan setting akses email pada facebook-mu untuk masuk ke dalam aplikasi ini</string>
+    <string name="error_network_409">Kamu telah login di perangkat lain.</string>
+    <string name="error_network_404_title">Not Found!</string>
+    <string name="error_network_404">Layanan tidak tersedia.\nSilakan coba kembali</string>
+    <string name="error_network_500_title">Internal Server Error!</string>
+    <string name="error_network_500">Sistem sedang ada masalah. Silakan coba beberapa saat lagi</string>
+    <string name="error_exercise_not_found_title">Mohon Maaf...</string>
+    <string name="error_exercise_not_found_description">Saat ini soal belum tersedia pada Bank Soal, silahkan pilih Bab atau Sub Bab yang lain</string>
+    <string name="error_general_title">Ada error nih...</string>
+    <string name="error_general_description">Sedang ada error pada aplikasi ini. Jangan khawatir, kami sedang berusaha memperbaiki masalahnya!</string>
+    <string name="error_forbidden_title">Tidak Berlangganan Premium</string>
+    <string name="error_forbidden_description">Saat ini akun kamu sedang tidak berlangganan premium di Skolla. Silakan hubungi admin untuk berlangganan premium.</string>
+    <string name="error_forbidden_button">Premium Skolla</string>
+    <string name="error_forbidden_info_title">Silakan masuk kembali</string>
+    <string name="error_forbidden_info_description">Akun Skolla-mu dikeluarkan secara otomatis karena sesi kamu habis. Silakan lakukan login kembali.</string>
+    <string name="error_forbidden_info_button">OKE</string>
+    <string name="error_corrupt_file_title">File bermasalah..</string>
+    <string name="error_corrupt_file_description">File tidak dapet dibuka. Silahkan download ulang</string>
+    <string name="error_corrupt_file_button">OKE</string>
+    <string name="error_connection_time_out">Failed to connect to server please check you network!</string>
+
+    <string name="error_network_button">Tutup</string>
+    <string name="error_network_interupted_button">Coba Lagi</string>
+    <string name="error_google_title">Terjadi kesalahan saat menyambung ke Google</string>
+    <string name="error_google_description">Terjadi kesalahan pada saat menyambung ke Google. Kode Error: %1$d</string>
+    <string name="error_google_button">OKE</string>
+
+    <!--Profile-->
+    <string name="profile_welcome_name">Hai, %1$s!</string>
+    <string name="profile_form_empty_validation">%1$s tidak boleh kosong</string>
+    <string name="profile_form_min_char_validation">%1$s minimal 11 angka</string>
+    <string name="profile_title_name">Nama</string>
+    <string name="profile_hint_name">Nama Lengkap</string>
+    <string name="profile_title_email">Email</string>
+    <string name="profile_hint_email">Email</string>
+    <string name="profile_title_phone">Kontak Whatsapp</string>
+    <string name="profile_hint_phone">Masukkan nomor Whatsapp</string>
+
+    <string name="booking_title_plat_no">Kontak Whatsapp</string>
+    <string name="booking_hint_plat_no">Masukkan nomor Whatsapp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="dialog_booking_confirm_title">Membuat nomor urut booking</string>
+    <string name="dialog_booking_confirm_description">Lanjutkan proses booking untuk kendaranmu?</string>
+    <string name="dialog_booking_confirm_positive_button">Oke</string>
+    <string name="dialog_booking_confirm_negative_button">Nanti dulu</string>
+    <string name="dialog_booking_success_title">Berhasil Booking</string>
+    <string name="dialog_booking_success_description">Booking servis kendaran telah berhasil</string>
+    <string name="dialog_booking_success_positive_button">Oke</string>
+
+    <!--Other-->
+    <string name="difficulty_information">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="text_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+
+    <string name="text_title_delete_account">Delete BCA Sekuritas \nAccount </string>
+    <string name="bullet">\u2022</string>
+
+    <string name="text_corporate_news">Corporate News</string>
+    <string name="text_desc_corporate_news">News: New contract of WSKT has reached 72%</string>
+    <string name="text_corporate_notification">Corporate Notification</string>
+    <string name="text_desc_corporate_notification">BBCA Report: BBCA Financial Report[BBCA]</string>
+    <string name="text_desc_price_alert"><![CDATA[WSBP has reached you target price (<=500)]]></string>
+    <string name="text_price_alert">Price Alert</string>
+    <string name="text_trending_stocks">Trending Stocks</string>
+    <string name="text_desc_trending_stocks">One of the stocks in you watchlist in now trending (BBCA)</string>
+
+    <string name="text_desc_e_statments">Please choose document type and time to download document</string>
+    <string name="text_report_type">Report Type</string>
+    <string name="text_year">Year</string>
+    <string name="text_month">Month</string>
+    <string name="text_guide_e_statements">2 digit date of birth + 2 digit month of birth + 2 digit year of birth</string>
+    <string name="text_title_guide_e_statements">To open the reports, please use your password in <b>DDMMYY</b> format:</string>
+    <string name="text_send_to_my_email">Send To My Email</string>
+
+    <string name="text_change_email">Change Email</string>
+    <string name="text_change_mobile_number">Change Mobile Number</string>
+    <string name="text_change_bank_account">Change Bank Account</string>
+    <string name="text_change_pin">Change PIN</string>
+    <string name="text_change_password">Change Password</string>
+    <string name="text_current_password">Current Password</string>
+    <string name="text_new_password">New Password</string>
+    <string name="text_enter_current_password">Enter current password</string>
+    <string name="text_create_new_password">Create new password</string>
+    <string name="text_re_enter_new_password">Re-enter new password</string>
+    <string name="text_save_changes">Save Changes</string>
+
+    <string name="text_transfer_fund_to_this_account">Transfer fund to this account</string>
+    <string name="text_bank_account">Bank Account</string>
+    <string name="text_how_to_transfer">How to Transfer</string>
+    <string name="text_m_banking">M-Banking</string>
+    <string name="text_internet_banking">Internet Banking</string>
+    <string name="text_branch">Branch</string>
+    <string name="text_withdrawable_amount">Withdrawable Amount</string>
+    <string name="text_processed_amount">Processed Amount</string>
+    <string name="text_transfer_to">Transfer to</string>
+    <string name="text_amount">Amount</string>
+    <string name="text_step_withdraw_1">Cash withdrawals after 14:30 WIB will be processed on the next working day. </string>
+    <string name="text_step_withdraw_2">Withdrawals to a bank account different from RDN bank may incur a transfer fee. </string>
+    <string name="text_step_withdraw_3">The funds will be credited to the withdrawal account within a maximum of 1x24 hours on working day (domestic bank).</string>
+    <string name="text_step_withdraw_4">Limit penarikan Saldo RDN berbeda-beda sesuai dengan kebikan perusahaan</string>
+    <string name="text_definition_processed_balance"><b>Processed amount</b> is the result of selling shares that are being processed to enter your RDN balance. This process takes 2 working days after the transaction.</string>
+    <string name="text_definition_withdrawable_balance"><b>Withdrawable amount</b> is the balance you can withdraw to your bank account</string>
+    <string name="text_confirm">Confirm</string>
+    <string name="text_transfer_fee">Transfer Fee</string>
+    <string name="text_proceeds">Proceeds</string>
+    <string name="text_terms_conditions">By clicking Confirm I have read and agreed to the <b><font color="#0154FA">Terms &amp; Conditions.</font></b></string>
+    <string name="text_status">Status</string>
+    <string name="text_date">Date</string>
+    <string name="text_account_number">Account Number</string>
+    <string name="text_bank">Bank</string>
+    <string name="text_filter">Filter</string>
+    <string name="text_time">Time</string>
+    <string name="text_from">From</string>
+    <string name="text_to">To</string>
+    <string name="text_transaction">Transaction</string>
+    <string name="text_all">All</string>
+    <string name="text_dividend">Dividend</string>
+    <string name="text_withdrawal">Withdrawal</string>
+    <string name="text_apply">Apply</string>
+    <string name="text_reset">Reset</string>
+    <string name="title_activity_test">TestActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="device_auth_update_data_info_email">If your email address is no longer valid, please <b><font color="#0154FA">update your data</font></b></string>
+    <string name="device_auth_update_data_info_phone">If your phone number is no longer valid, please <b><font color="#0154FA">update your data</font></b></string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+
+    <string name="sample_profile_name">Jonathan</string>
+    <string name="sample_status_no_account">Trading Account - </string>
+    <string name="text_switch_account">Switch Account</string>
+    <string name="sample_trading_balance">Rp 10.000.000</string>
+    <string name="text_trading_balance">Trading Balance</string>
+    <string name="text_top_up">Top Up</string>
+    <string name="text_withdraw">Withdraw</string>
+    <string name="text_history">History</string>
+    <string name="text_account">Account</string>
+    <string name="text_security">Security</string>
+    <string name="text_others">Others</string>
+    <string name="text_help">Help</string>
+    <string name="text_about">About</string>
+    <string name="text_logout">Log Out</string>
+    <string name="text_english">English</string>
+    <string name="text_smart_login">Smart Login</string>
+    <string name="text_dark_mode">Dark Mode</string>
+    <string name="text_notifications">Notifications</string>
+    <string name="text_e_statements">E-Statements</string>
+    <string name="text_trading_info">Trading Info</string>
+    <string name="text_personal_info">Personal Info</string>
+    <string name="text_e_ktp_number">e-KTP number</string>
+    <string name="fa_text_name_ktp">Name as in KTP</string>
+    <string name="text_address">Address</string>
+    <string name="text_delete_my_account">Delete Account</string>
+    <string name="fsd_text_code_bbca">BBCA</string>
+    <string name="fsd_text_prev">Prev</string>
+    <string name="fsd_text_open">Open</string>
+    <string name="fsd_text_high">High</string>
+    <string name="fsd_text_low">Low</string>
+    <string name="fis_text_fees_commissions_income"><![CDATA[Fees & Commissions Income]]></string>
+    <string name="isn_desc_special_notes_b">Adanya permohonan Pernyataan Pailit, permohonan pembatalan perdamaian, atau dalam kondisi pailit.</string>
+    <string name="fsd_desc_market_closed">You can still make an order but it will be placed after the market resumes.</string>
+    <string name="fsd_text_market_closed">Market is currently closed</string>
+    <string name="fks_text_earnings_per_shares">Earnings Per Shares</string>
+    <string name="fsd_text_my_portofolio">My Portofolio</string>
+    <string name="text_desc_take_profit">If stock price hit <b>Rp9.125</b>, Sell order will be sent to take an approx. <b>20.000 (+5%)</b> profit.</string>
+    <string name="text_desc_stop_loss">If stock price hit <b>Rp8.900</b>, Sell order will be sent to take an approx. <b>40.000 (-3.2%)</b>.</string>
+    <string name="text_notification">Notification</string>
+    <string name="text_report">Reports</string>
+    <string name="text_global">Global</string>
+    <string name="fob_info_amount_more_than_max_cash">You will be using <b>Buying Limit</b>. Please make sure you have enough balance in your account max. T+2 after placing an order.</string>
+    <string name="fob_text_learn_more">Learn More</string>
+    <string name="fob_warning_more_than_lot_limit">Maximum order is <b>50,000</b> lot</string>
+    <string name="det_text_introducing">Introducing you</string>
+    <string name="det_description_title">Buying limit is a facility to buy stocks exceeding your available cash, using your cash and portfolio valuation as collateral based on the margin level.</string>
+    <string name="det_desc_payment_terms">Pembayaran buying limit yang terpakai akan dilakukan dengan memotong saldo deposit RDN nasabah.
+        \n\nPastikan nasabah memiliki saldo yang cukup pada RDN maksimal T+2 setelah order pembelian matched.
+        \n\nApabila terjadi keterlambatan pelunasan, \nT+3: Nasabah akan dikenakan bunga.\nT+4: Akan dilakukan Force Sell.</string>
+    <string name="det_text_payment_terms">Payment Terms</string>
+    <string name="det_text_refund_terms">Refund Terms</string>
+    <string name="det_desc_refund_terms">Apabila dana yang diterima setelah dilakukan <b>Force Sell</b> melebihi hutang nasabah, maka kelebihan dana tersebut akan dikembalikan dalam bentuk saldo ke RDN nasabah.</string>
+
+    <string name="title_price_alert_empty">You don’t have any price alert set up</string>
+    <string name="desc_price_alert_empty">React quickly to price changes by setting up a price alert to your favorite stocks.</string>
+    <string name="text_set_alert">Set Alert</string>
+    <string name="text_add_price_alert">Add Price Alert</string>
+    <string name="symbol_smaller_than"><![CDATA[<]]></string>
+    <string name="symbol_small_equals">≤</string>
+    <string name="symbol_equals">=</string>
+    <string name="symbol_greater_equals">≥</string>
+    <string name="symbol_greater_than"><![CDATA[>]]></string>
+    <string name="text_set_price_target">Set Price Target</string>
+    <string name="text_notes">Notes</string>
+
+    <string name="fsda_description">PT Bank Central Asia Tbk didirikan pada 10 Agustus 1955, dan melantai di bursa saham pada 31 Mei 2000. PT Bank Central Asia Tbk memiliki visi menjadi bank pilihan utama andalan masyarakat yang berperan sebagai pilar penting perkonomian Indonesia.</string>
+    <string name="fsda_business_field">PT Bank Central Asia Tbk bergerak pada sektor keuangan. Kegiatan utamanya meliputi perbankan dan jasa keuangan lainnya.</string>
+    <string name="fsda_vp_director_name">Gregory Hendra Lembong\nArmand Wahyudi Hartono</string>
+    <string name="fsda_president_director_name">Jahja Setiaatmadja</string>
+    <string name="fsda_director_name">Tan Ho Hien \nSubut Tan\nRudy Susanto\nLianawaty Suwono Santoso\nVera Eve Lim\nFrengky Chandra Kusuma\nHaryanto Tiara Budiman\nAntonius Widodo Mulyono</string>
+    <string name="fsda_president_commisioner_name">Ir. Djohan Emir Setijoso</string>
+    <string name="fsda_commisioner_name">Tonny Kusnadi</string>
+    <string name="fsda_independent_commisioner_name">Cyrillys Harinowo\nRaden Pardede\nSumantri Slamet</string>
+
+    <string name="fsda_text_analyst_rating">Analyst Rating</string>
+    <string name="fsda_desc_analysis_rating">Analysis from 10 securities in Indonesia</string>
+    <string name="fsds_analysis_rating_disclaimer">Disclaimer: Stock investment contains risks and is entirely a personal responsibility</string>
+
+    <string name="fa_text_client_code">Client Code</string>
+    <string name="fp_client_code_value">12931082301</string>
+    <string name="fa_text_rdn">RDN</string>
+    <string name="fa_rdn_value">BCA - 192310284019280</string>
+    <string name="fa_text_sid">SID</string>
+    <string name="fa_sid_value">IDD9102930182310</string>
+    <string name="fa_text_sre">SRE 01</string>
+    <string name="fa_sre_value">XL01923JSD1029019</string>
+    <string name="fa_text_rekening_bank_pencairan">Rekening Bank Pencairan</string>
+    <string name="fa_rekening_bank_pencairan_value">BCA - 1029019401294</string>
+    <string name="fa_ktp_number_value">1092i30140124019</string>
+    <string name="fa_name_value">Agus Setiawan Halim</string>
+    <string name="fa_address_value">Jl merah putih no 17 Jakarta Selatan</string>
+    <string name="fa_text_email_address">Email Address</string>
+    <string name="fa_email_address_value">johndoe@gmail.com</string>
+    <string name="fa_text_mobile_number">Mobile Number</string>
+    <string name="fa_mobile_phone_value">085612345678</string>
+    <string name="fa_text_npwp">NPWP</string>
+    <string name="fa_npwp_value">012.129301.29301.129.21</string>
+    <string name="fa_text_login_id">Login ID</string>
+    <string name="text_bca_sekuritas">BCA Sekuritas</string>
+    <string name="text_about_app">BCA Sekuritas</string>
+    <string name="fa_text_version_2_0_1">version </string>
+    <string name="text_profile">Profile</string>
+    <string name="text_deposit_amount">Deposit Amount</string>
+    <string name="on_board_title_1">Grow your <b>Wealth</b> with <b>BCA Sekuritas</b></string>
+    <string name="on_board_title_2"><b>Secure and Trusted</b> by 100K+ Indonesian</string>
+    <string name="on_board_title_3"><b>Success</b> at your Fingertips</string>
+    <string name="text_price">Price</string>
+    <string name="text_buy_lot">Buy Lot</string>
+    <string name="text_percent_buy">%Buy</string>
+    <string name="text_chart">Chart</string>
+    <string name="text_sell">%Sell</string>
+    <string name="text_sell_lot">Sell Lot</string>
+    <string name="text_buy_freq">Buy Freq</string>
+    <string name="text_sell_freq">Sell Freq</string>
+    <string name="text_overview">Overview</string>
+    <string name="text_income_statement">Income Statement</string>
+    <string name="text_balance_sheet">Balance Sheet</string>
+    <string name="text_cashflow">Cashflow</string>
+    <string name="text_annual">Annual</string>
+    <string name="text_show_table">Show Table</string>
+    <string name="text_hide_table">Hide Table</string>
+    <string name="desc_market_close">You can still make an order but it will be placed after the market resumes.</string>
+    <string name="desc_snackbar_order_success">Check all of your active orders in your portfolio. <b>Check Now</b></string>
+    <string name="desc_snackbar_eipo_order_success">Please make sure your balance is available on distribution date.</string>
+    <string name="desc_snackbar_order_success_exercise">Check all of your rights exercise in your exercise order list.</string>
+    <string name="text_special_notes_information">Special Notes Information</string>
+    <string name="text_invoice_statement">Invoice Statement</string>
+    <string name="text_independent_commissioner">Independent Commissioner</string>
+    <string name="text_commisioner">Commisioner</string>
+    <string name="text_president_commisioner">President Commisioner</string>
+    <string name="text_komisioner">Komisioner</string>
+    <string name="text_director">Director</string>
+    <string name="text_vice_presodent_director">Vice President Director</string>
+    <string name="text_president_director">President Director</string>
+    <string name="text_pimpinan_perusahaan">Pimpinan Perusahaan</string>
+    <string name="text_bidang_usaha">Bidang Usaha</string>
+    <string name="text_keterangan">Keterangan</string>
+    <string name="text_informasi_perusahaan">Informasi Perusahaan</string>
+    <string name="text_nama_perusahaan">Nama Perusahaan</string>
+    <string name="text_tanggal_pencatatan">Tanggal Pencatatan</string>
+    <string name="text_last_price">Last Price</string>
+    <string name="text_change">Change</string>
+    <string name="symbol_percent">%</string>
+    <string name="text_open">Open</string>
+    <string name="text_high">High</string>
+    <string name="text_low">Low</string>
+    <string name="text_value_t">Value(T)</string>
+    <string name="text_volume_t">Volume(T)</string>
+    <string name="text_freq">Freq</string>
+    <string name="text_revenue">Revenue</string>
+    <string name="text_cost_of_goods_sold">Cost of Goods Sold</string>
+    <string name="max_available_order_is_50_000_lot">Max. available order is <b>50.000</b> lot</string>
+    <string name="top_up_withdrawal"><![CDATA[Top Up & Withdrawal]]></string>
+    <string name="text_whatsapp_chat">Whatsapp Chat</string>
+    <string name="no_wa_bca">+62 8191 9500 888</string>
+    <string name="text_youtube">Youtube</string>
+    <string name="text_instagram">Instagram</string>
+    <string name="text_watch_tutorials">Watch Tutorials</string>
+    <string name="email_bcas">halo@bcasekuritas.co.id</string>
+    <string name="text_email">Email</string>
+    <string name="max_cash_10_lot">max. Cash <b>10 Lot</b></string>
+    <string name="max_limit_10_lot">max. Limit <b>10 Lot</b></string>
+    <string name="stock_pick_warning">This recommendation is not guaranteed and PT BCA Sekuritas will not be liable of any consequences</string>
+    <string name="withdraw_for_today"><b>Withdraw For Today</b>: Cancels for today, keeping the existing GTC order.</string>
+    <string name="withdraw_order_gtc"><b>Withdraw Order</b>: Removes the entire order, including the GTC part.</string>
+    <string name="withdraw_info_order_detail">Your order has been withdrawn for today and it will be executed on the next business day.</string>
+    <string name="withdraw_info_amend_order_detail">Your order has been amended for today and it will be executed on the next business day.</string>
+    <string name="info_amend_order">Amending the order will replace today\'s order with a new one while retaining the old GTC order.</string>
+
+    <string name="acceleration_development">Papan Pengembangan adalah Papan Pencatatan yang disediakan untuk mencatatkan saham dari perusahaan menengah yang diharapkan dapat berkembang.</string>
+    <string name="acceleration_new_economy">Papan Ekonomi baru adalah merupakan papan pencatatan yang setara dengan Papan Utama. Perusahaan memenuhi ketentuan tercatat di Papan Utama dan memiliki karakteristik khusus yang dietitian oleh Bursa.\nKarakteristik khusus tersebut meliputi:\n- Memiliki pertumbuhan pendapatan yang tinggi\n- Menggunakan teknologi untuk menciptakan inovasi produk atau jasa yang meningkatkan produktivitas dan pertumbuhan ekonomi serta memiliki kemanfaatan sosial; serta\n- Masuk dalam bidang usaha yang ditetapkan oleh Bursa.</string>
+    <string name="acceleration_watch_list">Papan Pemantauan Khusus adalah papan pencatatan yang merupakan pengembangan lanjutan dari Daftar Efek Bersifat Ekuitas Dalam Pemantauan Khusus yang telah diimplementasikan sejak 19 Juli 2021 dengan mengacu pada Peraturan No. II-S tentang Perdagangan Efek Bersifat Ekuitas Dalam Pemantauan Khusus.</string>
+    <string name="acceleration_desc">Papan Akselerasi adalah Papan Pencatatan yang disediakan untuk mencatatkan saham dari Emiten dengan Aset Skala Kecil atau Emiten dengan Aset Skala Menengah sebagaimana dimaksud dalam Peraturan Otoritas Jasa Keuangan Nomor 53 /POJK.04/2017 Tentang Pernyataan Pendaftaran Dalam Rangka Penawaran Umum Dan Penambahan Modal Dengan Memberikan Hak Memesan Efek Terlebih Dahulu Oleh Emiten Dengan Aset Skala Kecil Atau Emiten Dengan Aset Skala Menengah dan belum dapat memenuhi persyaratan di Papan Pengembangan.</string>
+    <string name="disclaimer_one">Setiap keputusan investasi yang dibuat setelah membaca atau mendengar informasi yang diberikan kepada Nasabah oleh PT BCA Sekuritas, baik melalui website, Aplikasi Online Trading, maupun dari karyawan adalah sepenuhnya keputusan individu dari Nasabah, karena itu, segala resiko dan akibat dari keputusan investasi tersebut menjadi tanggung jawab Nasabah.</string>
+    <string name="disclaimer_two">Setiap Nasabah dengan ini membebaskan PT BCA Sekuritas dari segala bentuk tanggung jawab atas kerugian maupun potensi kerugian yang terjadi, baik secara langsung maupun tidak langsung dari penggunaan Fasilitas Online Trading oleh Nasabah, yang diakibatkan oleh segala bentuk gangguan jaringan, hilangnya data, penundaan peng operasian sistem Fasilitas Online Trading, virus komputer, kerusakan jaringan komunikasi, pencurian atau pengrusakan data, perubahan atau penggunaan informasi Nasabah oleh pihak lain yang tidak berwenang dan gangguan sistem lainnya yang menyebabkan Fasilitas Online Trading tidak dapat berfungsi sebagaimana mestinya.</string>
+    <string name="disclaimer_three">Nasabah dengan ini menyatakan bertanggung jawab penuh dan akan menanggung segala biaya, termasuk namun tidak terbatas pada biaya penasihat hukum, klaim kerusakan (termasuk namun tidak terbatas pada kerus akan apapun yang bersifat tidak langsung, kerusakan yang tidak disengaja atau kerusakan apapun yang bersifat khusus), kerugian (termasuk namun tidak terbatas pada kerugian transaksi atau hilangnya pendapatan) atau kewajiban lainnya karena ketidakmampuan Nasabah dalam menggunakan sistem komputer Nasabah maupun Fasilitas Online Trading, termasuk namun tidak terbatas pada, ketidakmampuan untuk membatalkan order, pembatasan akses atau gangguan sistem.</string>
+    <string name="disclaimer_four">BCAS tidak bertanggung jawab terhadap segala akibat yang timbul terkait dengan penggunaan Fasilitas Online Trading ini, termasuk namun tidak terbatas pada kegagalan transmisi data, kerusakan data, tidak terkirimnya data baik sebagian maupun seluruhnya dan hal-hal lain yang terjadi diluar kendali BCAS sebagai penyedia Fasilitas Online Trading. Setiap Nasabah mengerti dan menyadari sepenuhnya akan risiko tersebut dan membebaskan BCAS dari segala kerugian yang sudah dan/atau mungkin timbul baik pada saat ataupun setelah dipergunakannya Fasilitas Online Trading.</string>
+    <string name="disclaimer_five">Setiap Nasabah dan/atau Pengguna Fasilitas Online Trading memahami dan mengetahui akan kemungkinan terjadinya penundaan data dan pesanan Nasabah dan/ atau Pengguna Fasilitas Online Trading melalui Automated Order. BCAS tidak bertanggung jawab atas semua klaim atas kerugian yang mungkin muncul sebagai akibat dari penundaan ini.</string>
+    <string name="text_disclaimer">Disclaimer</string>
+    <string name="tnc_eipo_one">Nasabah dapat melakukan pemesanan untuk porsi penjatahan terpusat.</string>
+    <string name="tnc_eipo_two">Pemesanan IPO hanya dapat dilakukan di Aplikasi Online Trading milik BCA Sekuritas (BCA Sekuritas Mobile atau BEST), atau pemesanan dapat dilakukan melalui Aplikasi yang disediakan oleh PT Bursa Efek Indonesia (sistem e-IPO). Apabila nasabah melakukan pemesanan melalui Aplikasi Online Trading BCA Sekuritas dan sistem e-IPO, maka BCA Sekuritas hanya akan memproses 1 pemesanan yang dilakukan melalui sistem e-IPO (pemesanan melalui BCA Sekuritas Mobile atau BEST dibatalkan).</string>
+    <string name="tnc_eipo_three">Pemesanan dapat dilakukan selama masa Penawaran Awal (Book Building) dan Penawaran Umum (Offering).</string>
+    <string name="tnc_eipo_four">Hanya pesanan yang memenuhi syarat sebagai berikut akan diproses alokasinya:</string>
+    <string name="tnc_eipo_four_a">a. Harga saham yang diindikasikan sama atau di atas harga saham final yang ditetapkan setelah selesainya proses Book Building.</string>
+    <string name="tnc_eipo_four_b">b. Terdapat dana yang cukup di rekening dana nasabah pemesanan sejak hari pertama, masa offering dan selambat-lambatnya H-1 sebelum masa offering berakhir, sesuai dengan total pesanan (jika dana tidak cukup pemesanan akan dibatalkan).</string>
+    <string name="tnc_eipo_four_c">c. Jika terdapat kewajiban penyelesaian transaksi yang telah jatuh tempo, maka dana yang tersedia di rekening nasabah akan diperuntukan terlebih dahulu untuk memenuhi kewajiban penyelesaian transaksi.</string>
+    <string name="tnc_eipo_five">Jika terdapat kelebihan pesanan dalam porsi penjatahan terpusat, sistem E-IPO akan menghitung alokasi saham secara otomatis.</string>
+    <string name="tnc_eipo_six">Pemesanan pada masa Book Building yang telah memenuhi syarat akan diteruskan pada masa offering, maka dengan ini nasabah menyatakan telah menyetujui, mengetahui dan membaca prospektus final yang telah diterbitkan oleh Emiten yang melakukan IPO.</string>
+    <string name="tnc_eipo_seven">Nasabah dapat melakukan perubahan atau pembatalan pemesanan selambat-lambatnya H-1 sebelum masa offering berakhir dengan mengirimkan email ke e-ipo@bcasekuritas.co.id dengan menginformasikan kode Emiten (ticker code), kode nasabah, nama nasabah, perubahan yang diinginkan atau pembatalan (informasi yang tidak tersedia dapat membuat BCA Sekuritas tidak melakukan proses pengajuan).</string>
+    <string name="tnc_eipo_eight">Pemesanan saham IPO di BCA Sekuritas Mobile dan BEST akan berakhir pada:</string>
+    <string name="tnc_eipo_eight_a">a. Pukul 16.00 WIB di hari terakhir masa Book Building.</string>
+    <string name="tnc_eipo_eight_b">b. Pukul 10.00 WIB di hari terakhir masa Offering Nasabah yang masih ingin melakukan pemesanan saham IPO, silakan mengunjungi website e-IPO di https://www.e-ipo.co.id/id.</string>
+    <string name="tnc_eipo_nine">Kelebihan dana yang telah dibayarkan karena adanya alokasi saham, pembatalan dan atau perubahan pemesanan akan dikembalikan ke rekening dana nasabah.</string>
+    <string name="tnc_eipo_ten">Nasabah menyatakan dan menjamin tidak akan menggunakan jasa perantara pedagang Efek yang diberikan oleh BCA Sekuritas sebagai sarana untuk melakukan tindakan yang dikategorikan melanggar hukum, termasuk namun tidak terbatas kepada tindak pidana pencucian uang (Money Laundering).</string>
+    <string name="tnc_eipo_eleven">Investasi dalam saham mengandung risiko, antara lain berupa fluktuasi harga saham dan tidak likuidnya perdagangan saham di Bursa.</string>
+    <string name="info_eipo_status_approved">Your order has been processed. The funds will be refunded if the IPO share allocation received is less than the order.</string>
+    <string name="info_eipo_status_dropped">The order cannot be processed due to insufficient balance.</string>
+    <string name="info_eipo_status_notvalid">The order cannot be executed as the provided customer SID  &amp; SRE number is not valid.</string>
+    <string name="public_expose">Public Expose</string>
+    <string name="stock_split">Stock Split</string>
+    <string name="reverse_split">Reverse Split</string>
+
+    <string-array name="spinner_order_buy_compare">
+        <item>Limit Order</item>
+        <item>Market</item>
+        <item>Best Bid</item>
+        <item>Best Offer</item>
+        <item>Best Opposite</item>
+    </string-array>
+
+    <string-array name="spinner_order_buy_board">
+        <item>Regular</item>
+        <item>Cash</item>
+    </string-array>
+
+    <string-array name="spinner_order_buy_take_profit_compare">
+        <item>Last Price</item>
+        <item>Best Offer</item>
+        <item>Best Bid</item>
+    </string-array>
+
+    <string-array name="spinner_order_buy_slicing_type">
+        <item>At Once</item>
+        <item>Excecution Time</item>
+    </string-array>
+
+</resources>
